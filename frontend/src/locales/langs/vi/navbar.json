@@ -1,0 +1,136 @@
+{
+  "app": "Ứng dụng",
+  "job": "Công việc",
+  "user": "Người dùng",
+  "travel": "Du lịch",
+  "invoice": "Hóa đơn",
+  "blog": {
+    "title": "Blog",
+    "caption": "Phím tắt tùy chỉnh."
+  },
+  "subheader": "Tiêu đề phụ",
+  "navigation": {
+    "overview": "Tổng quan",
+    "assistant": "Trợ lý",
+    "agents": "Tác nhân",
+    "knowledgeBase": "Cơ sở kiến thức",
+    "knowledgeSearch": "Tìm kiếm kiến thức",
+    "promptLibrary": "Thư viện prompt",
+    "canvas": "Canvas",
+    "projects": "Dự án",
+    "administration": "Quản trị",
+    "settings": "Cài đặt",
+    "connectorSettings": "Cài đặt kết nối",
+    "myProfile": "Hồ sơ của tôi",
+    "companyProfile": "Hồ sơ công ty",
+    "company": "Công ty",
+    "authentication": "Xác thực",
+    "connectors": "Kết nối",
+    "services": "Dịch vụ",
+    "preferences": "Tùy chọn",
+    "platformSettings": "Cài đặt nền tảng",
+    "sessionManagement": "Quản lý phiên",
+    "personalProfile": "Hồ sơ cá nhân",
+    "licenseBilling": "Giấy phép & thanh toán"
+  },
+  "welcome": {
+    "title": "Workplace AI hiểu sâu về nơi làm việc của bạn",
+    "placeholder": "Hỏi bất cứ điều gì..."
+  },
+  "knowledgeBase": {
+    "aiAssistant": "Trợ lý AI",
+    "askQuestionsAboutDocument": "Đặt câu hỏi về tài liệu này"
+  },
+  "pages": {
+    "sessionManagement": {
+      "title": "Quản lý phiên",
+      "description": "Quản lý các phiên hoạt động và đăng xuất khỏi các thiết bị khác."
+    },
+    "personalProfile": {
+      "title": "Hồ sơ cá nhân"
+    },
+    "applicationPreferences": {
+      "title": "Tùy chọn ứng dụng",
+      "description": "Cấu hình các tùy chọn ngôn ngữ và giao diện để có trải nghiệm tốt hơn trong tổ chức của bạn."
+    },
+    "companyProfile": {
+      "title": "Hồ sơ công ty",
+      "logo": "Logo công ty",
+      "logoDescription": "Logo của bạn sẽ xuất hiện trên bảng điều khiển tài khoản, email và tài liệu được tạo từ Thero."
+    },
+    "connectorSettings": {
+      "title": "Cài đặt kết nối",
+      "subtitle": "Tích hợp",
+      "description": "Quản lý tích hợp với các công cụ SaaS và giám sát trạng thái đồng bộ của chúng."
+    }
+  },
+  "chat": {
+    "newChat": "Chat mới",
+    "creating": "Đang tạo...",
+    "today": "Hôm nay",
+    "yesterday": "Hôm qua",
+    "previous7Days": "7 ngày trước",
+    "previous30Days": "30 ngày trước",
+    "older": "Cũ hơn",
+    "projectHome": "Trang chủ dự án",
+    "projectPlaceholder": "Chat mới trong {{projectTitle}}"
+  },
+  "chatInput": {
+    "buttons": {
+      "insertPromptFromLibrary": "Insert prompt from library",
+      "toggleReasoning": "Reasoning",
+      "enableReasoning": "Reasoning",
+      "disableReasoning": "Reasoning",
+      "toggleWebSearch": "Web search",
+      "enableWebSearch": "Web search",
+      "disableWebSearch": "Web search",
+      "attachFile": "Attach file",
+      "startDictation": "Dictation",
+      "stopRecording": "Stop dictation",
+      "speechNotSupported": "Speech recognition not supported by this browser"
+    },
+    "modelTypes": {
+      "agent": "Agent",
+      "knowledge": "Knowledge",
+      "chat": "Chat",
+      "search": "Search",
+      "deepResearch": "Deep Research",
+      "image": "Image"
+    },
+    "filterSources": "Filter Sources",
+    "selectAppsAndKnowledgeBases": "Select apps and knowledge bases",
+    "context": "Context:",
+    "filter": "Filter:",
+    "attachedFiles": "Attached files",
+    "dropFilesHere": "Drop files here",
+    "searchMentions": "Search or enter @name...",
+    "all": "All",
+    "kb": "KB",
+    "projects": "Projects",
+    "files": "Files",
+    "apps": "Apps",
+    "users": "Users",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "uploading": "Uploading...",
+    "processing": "Processing...",
+    "completed": "Completed",
+    "error": "Error",
+    "promptLibrary": "Prompt Library",
+    "browseSavedPrompts": "Browse saved prompts and insert them into this chat without leaving the page.",
+    "noPromptsAvailable": "No prompts available yet.",
+    "searchPrompts": "Search prompts",
+    "usePrompt": "Use",
+    "openFullPromptLibrary": "Open full prompt library",
+    "webSearchActive": "Web search active",
+    "reasoningActive": "Reasoning active",
+    "agentLoadError": "Unable to load agents right now.",
+    "selectAgentTooltip": "Select an agent to start chatting",
+    "agentSelectedTooltip": "Chatting with {{agentName}}",
+    "selectAgentPlaceholder": "Select agent",
+    "loadingAgents": "Loading agents...",
+    "noAgentsFound": "No agents available yet",
+    "agentFallbackName": "Agent",
+    "agentRequired": "Please select an agent before sending."
+  }
+}

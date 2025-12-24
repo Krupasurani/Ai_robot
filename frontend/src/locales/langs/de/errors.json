@@ -1,0 +1,22 @@
+{
+  "network": {
+    "general": "Verbindung zum Server nicht möglich. Bitte überprüfe deine Internetverbindung.",
+    "timeout": "Die Anfrage hat zu lange gedauert. Bitte versuche es erneut."
+  },
+  "auth": {
+    "general": "Authentifizierung fehlgeschlagen. Bitte melde dich erneut an."
+  },
+  "validation": {
+    "general": "Ungültige Eingabedaten. Bitte überprüfe deine Angaben und versuche es erneut."
+  },
+  "generic": {
+    "server": "Auf dem Server ist ein Fehler aufgetreten. Bitte versuche es später erneut.",
+    "not_found": "Die angeforderte Ressource wurde nicht gefunden.",
+    "unknown": "Es ist ein Fehler aufgetreten. Bitte versuche es später erneut."
+  },
+  "backend": {
+    "UNKNOWN": "Es ist ein unerwarteter Fehler aufgetreten. Bitte versuche es später erneut."
+  }
+}
+
+

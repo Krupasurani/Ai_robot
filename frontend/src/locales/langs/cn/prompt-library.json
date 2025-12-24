@@ -1,0 +1,165 @@
+{
+  "page": {
+    "title": "提示库",
+    "subtitle": "保存、完善和重用您的最佳提示",
+    "description": "组织私有模板，共享工作区就绪指令，并在几秒钟内将其放入任何聊天中。"
+  },
+  "header": {
+    "refresh": "刷新",
+    "newPrompt": "新建提示"
+  },
+  "filters": {
+    "searchPlaceholder": "按标题、描述或内容搜索",
+    "scope": {
+      "all": "全部",
+      "private": "私有",
+      "shared": "已共享"
+    },
+    "categoryPlaceholder": "类别",
+    "allCategories": "所有类别",
+    "tagsPlaceholder": "标签",
+    "allTags": "所有标签",
+    "sortPlaceholder": "排序",
+    "recentlyUpdated": "最近更新",
+    "alphabetical": "A → Z",
+    "reset": "重置"
+  },
+  "prompts": {
+    "title": "提示",
+    "count": "{{count}} 个模板 • 范围: {{scope}}",
+    "updating": "更新中…",
+    "empty": {
+      "title": "还没有提示",
+      "description": "一次性保存您喜欢的指令，并在所有聊天中重用。",
+      "createButton": "创建您的第一个提示"
+    },
+    "categories": {
+      "uncategorized": "未分类"
+    },
+    "visibility": {
+      "private": "私有",
+      "shared": "已共享"
+    },
+    "noTags": "+{{count}}"
+  },
+  "details": {
+    "selectPrompt": "选择提示进行预览",
+    "selectPromptDescription": "从列表中选择模板以检查详细信息、复制和共享。",
+    "title": "提示内容",
+    "useInChat": "在聊天中使用",
+    "edit": "编辑",
+    "lastUpdated": "最后更新"
+  },
+  "actions": {
+    "edit": "编辑",
+    "duplicate": "复制",
+    "makePrivate": "设为私有",
+    "shareToWorkspace": "分享到工作区",
+    "shareWithUsers": "与用户共享",
+    "delete": "删除"
+  },
+  "dialog": {
+    "createTitle": "创建提示模板",
+    "editTitle": "编辑提示模板",
+    "description": "保持提示结构化和可重用。添加标签，选择模板，或让AI为您起草版本。",
+    "quickTemplates": "快速模板",
+    "titleLabel": "标题",
+    "titlePlaceholder": "例如：产品发布回顾提示",
+    "visibilityLabel": "可见性",
+    "visibilityOptions": {
+      "private": "私有",
+      "users": "与用户共享",
+      "workspace": "分享到工作区"
+    },
+    "descriptionLabel": "描述",
+    "descriptionPlaceholder": "解释此提示应该做什么。",
+    "contentLabel": "提示指令",
+    "contentPlaceholder": "输入您想要重用的完整指令…",
+    "categoryLabel": "类别",
+    "categoryPlaceholder": "例如：研究、工程、销售",
+    "tagsLabel": "标签",
+    "tagsPlaceholder": "添加标签并按Enter",
+    "addTag": "添加",
+    "removeTag": "删除标签 {{tag}}",
+    "guides": {
+      "title": "指南和最佳实践",
+      "item1": "描述角色、语气、输出格式和约束。",
+      "item2": "列出要遵循的具体步骤或检查清单。",
+      "item3": "当提示经过审查和稳定时，作为工作区共享。"
+    },
+    "aiAssist": "AI 辅助",
+    "refining": "完善中…",
+    "create": "创建提示",
+    "saveChanges": "保存更改"
+  },
+  "shareDialog": {
+    "title": "共享提示 {{title}}",
+    "selectTeamMembers": "选择团队成员",
+    "searchPlaceholder": "按名称或电子邮件搜索用户...",
+    "noUsersFound": "未找到用户。",
+    "inviteByEmail": "通过电子邮件邀请",
+    "invitePlaceholder": "name1@company.com, name2@company.com",
+    "inviteHelper": "使用逗号或空格分隔多个电子邮件。",
+    "currentMembers": "当前成员",
+    "noMembers": "暂无成员。",
+    "loading": "加载中…",
+    "ownerLabel": "所有者",
+    "roleRead": "读取",
+    "roleWrite": "写入",
+    "shareButton": "共享/邀请",
+    "closeButton": "关闭",
+    "successAddUsers": "用户已添加到提示",
+    "successInvites": "邀请已发送",
+    "successRoleUpdate": "角色已更新",
+    "successRemove": "成员已删除",
+    "errorShare": "无法完成共享/邀请",
+    "errorRole": "无法更新角色",
+    "errorRemove": "无法删除成员",
+    "errorNoSelection": "请选择用户或输入电子邮件"
+  },
+  "templates": {
+    "executiveSummary": {
+      "label": "执行摘要",
+      "helper": "将长格式内容转换为简洁的状态更新。",
+      "title": "执行摘要生成器",
+      "description": "将长文档总结为简洁的执行更新。"
+    },
+    "brainstorm": {
+      "label": "头脑风暴创意想法",
+      "helper": "用于创意的发散思维提示。",
+      "title": "发散式创意提示",
+      "description": "生成非传统的但实用的想法。"
+    },
+    "codeReview": {
+      "label": "代码审查助手",
+      "helper": "用于审查PR的结构化检查清单。",
+      "title": "代码审查检查清单",
+      "description": "在审查期间捕获回归并改进可读性。"
+    }
+  },
+  "deleteDialog": {
+    "title": "删除提示？",
+    "description": "此操作无法撤销。提示 {{title}} 将从您的库中移除。",
+    "cancel": "取消",
+    "delete": "删除",
+    "deleting": "删除中…"
+  },
+  "toast": {
+    "saved": "提示已保存到您的库中。",
+    "updated": "提示已更新。",
+    "deleted": "提示已删除。",
+    "duplicated": "提示已复制。",
+    "shared": "提示已与工作区共享。",
+    "madePrivate": "提示已设为私有。",
+    "copied": "提示已复制。切换到聊天进行粘贴。",
+    "copyFailed": "无法复制提示。",
+    "duplicateFailed": "无法复制提示。",
+    "saveFailed": "保存提示失败。",
+    "deleteFailed": "无法删除提示。",
+    "visibilityFailed": "更新可见性失败。",
+    "loadFailed": "加载提示失败",
+    "assistDrafted": "助手起草了提示模板。",
+    "assistFailed": "助手目前无法生成提示。",
+    "titleRequired": "请提供标题和提示内容。"
+  }
+}

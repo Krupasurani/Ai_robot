@@ -1,0 +1,165 @@
+{
+  "page": {
+    "title": "Prompt library",
+    "subtitle": "Save, refine, and reuse your best prompts",
+    "description": "Organize private templates, share workspace-ready instructions, and drop them into any chat in seconds."
+  },
+  "header": {
+    "refresh": "Refresh",
+    "newPrompt": "New prompt"
+  },
+  "filters": {
+    "searchPlaceholder": "Search by title, description, or content",
+    "scope": {
+      "all": "All",
+      "private": "Private",
+      "shared": "Shared"
+    },
+    "categoryPlaceholder": "Category",
+    "allCategories": "All categories",
+    "tagsPlaceholder": "Tags",
+    "allTags": "All tags",
+    "sortPlaceholder": "Sort",
+    "recentlyUpdated": "Recently updated",
+    "alphabetical": "A → Z",
+    "reset": "Reset"
+  },
+  "prompts": {
+    "title": "Prompts",
+    "count": "{{count}} templates • scope: {{scope}}",
+    "updating": "Updating…",
+    "empty": {
+      "title": "No prompts yet",
+      "description": "Save your go-to instructions once and reuse them across chats.",
+      "createButton": "Create your first prompt"
+    },
+    "categories": {
+      "uncategorized": "Uncategorized"
+    },
+    "visibility": {
+      "private": "Private",
+      "shared": "Shared"
+    },
+    "noTags": "+{{count}}"
+  },
+  "details": {
+    "selectPrompt": "Select a prompt to preview",
+    "selectPromptDescription": "Choose a template from the list to inspect details, copy, and share.",
+    "title": "Prompt content",
+    "useInChat": "Use in chat",
+    "edit": "Edit",
+    "lastUpdated": "Last updated"
+  },
+  "actions": {
+    "edit": "Edit",
+    "duplicate": "Duplicate",
+    "makePrivate": "Make private",
+    "shareToWorkspace": "Share to workspace",
+    "shareWithUsers": "Share with users",
+    "delete": "Delete"
+  },
+  "dialog": {
+    "createTitle": "Create prompt template",
+    "editTitle": "Edit prompt template",
+    "description": "Keep prompts structured and reusable. Add tags, pick a template, or let AI draft a version for you.",
+    "quickTemplates": "Quick templates",
+    "titleLabel": "Title",
+    "titlePlaceholder": "e.g. Product launch retro prompt",
+    "visibilityLabel": "Visibility",
+    "visibilityOptions": {
+      "private": "Private",
+      "users": "Share with users",
+      "workspace": "Share with workspace"
+    },
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Explain what this prompt is supposed to do.",
+    "contentLabel": "Prompt instructions",
+    "contentPlaceholder": "Enter the full instructions you want to reuse…",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "e.g. research, engineering, sales",
+    "tagsLabel": "Tags",
+    "tagsPlaceholder": "Add tag and press Enter",
+    "addTag": "Add",
+    "removeTag": "Remove tag {{tag}}",
+    "guides": {
+      "title": "Guides & best practices",
+      "item1": "Describe role, tone, output format, and constraints.",
+      "item2": "List concrete steps or checklists to follow.",
+      "item3": "Share as workspace when the prompt is reviewed and stable."
+    },
+    "aiAssist": "AI assist",
+    "refining": "Refining…",
+    "create": "Create prompt",
+    "saveChanges": "Save changes"
+  },
+  "shareDialog": {
+    "title": "Share prompt {{title}}",
+    "selectTeamMembers": "Select team members",
+    "searchPlaceholder": "Search users by name or email...",
+    "noUsersFound": "No users found.",
+    "inviteByEmail": "Invite by email",
+    "invitePlaceholder": "name1@company.com, name2@company.com",
+    "inviteHelper": "Use comma or space to separate multiple emails.",
+    "currentMembers": "Current members",
+    "noMembers": "No members yet.",
+    "loading": "Loading…",
+    "ownerLabel": "Owner",
+    "roleRead": "Read",
+    "roleWrite": "Write",
+    "shareButton": "Share / Invite",
+    "closeButton": "Close",
+    "successAddUsers": "Users added to prompt",
+    "successInvites": "Invitations sent",
+    "successRoleUpdate": "Role updated",
+    "successRemove": "Member removed",
+    "errorShare": "Could not complete sharing/invites",
+    "errorRole": "Failed to update role",
+    "errorRemove": "Failed to remove member",
+    "errorNoSelection": "Please select users or enter emails"
+  },
+  "templates": {
+    "executiveSummary": {
+      "label": "Executive summary",
+      "helper": "Turn long-form content into crisp status updates.",
+      "title": "Executive Summary Generator",
+      "description": "Summarize long documents into crisp executive updates."
+    },
+    "brainstorm": {
+      "label": "Brainstorm creative ideas",
+      "helper": "Divergent thinking prompts for ideation.",
+      "title": "Divergent Ideation Prompt",
+      "description": "Generate unconventional but practical ideas."
+    },
+    "codeReview": {
+      "label": "Code review helper",
+      "helper": "Structured checklist for reviewing PRs.",
+      "title": "Code Review Checklist",
+      "description": "Catch regressions and improve readability during reviews."
+    }
+  },
+  "deleteDialog": {
+    "title": "Delete prompt?",
+    "description": "This action cannot be undone. The prompt {{title}} will be removed from your library.",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting…"
+  },
+  "toast": {
+    "saved": "Prompt saved to your library.",
+    "updated": "Prompt updated.",
+    "deleted": "Prompt deleted.",
+    "duplicated": "Prompt duplicated.",
+    "shared": "Prompt shared with workspace.",
+    "madePrivate": "Prompt set to private.",
+    "copied": "Prompt copied. Switch to chat to paste it.",
+    "copyFailed": "Unable to copy prompt.",
+    "duplicateFailed": "Unable to duplicate prompt.",
+    "saveFailed": "Failed to save prompt.",
+    "deleteFailed": "Unable to delete prompt.",
+    "visibilityFailed": "Failed to update visibility.",
+    "loadFailed": "Failed to load prompts",
+    "assistDrafted": "Assistant drafted a prompt template.",
+    "assistFailed": "Assistant could not generate a prompt right now.",
+    "titleRequired": "Please provide a title and prompt content."
+  }
+}

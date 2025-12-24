@@ -1,0 +1,139 @@
+# =============================================================================
+# Thero AI - Web Search Stack (Add-on)
+# =============================================================================
+# Extends core stack with web search capabilities.
+# Requires core stack to be running first (uses shared network + Redis).
+#
+# Usage:
+#   Start core first:  docker compose -f docker/compose.yml up -d
+#   Then websearch:    docker compose -f docker/compose.websearch.yml up -d
+#
+# Note: Firecrawl is currently disabled due to complex setup requirements.
+# SearXNG provides basic web search functionality.
+# =============================================================================
+
+networks:
+  thero:
+    external: true
+    name: thero-network
+
+services:
+  # ---------------------------------------------------------------------------
+  # Search Services
+  # ---------------------------------------------------------------------------
+  searxng:
+    image: searxng/searxng:latest
+    container_name: thero-searxng
+    restart: always
+    ports:
+      - "8085:8080"
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8085/
+    volumes:
+      - ./config/searxng/settings.yml:/etc/searxng/settings.yml:ro
+      - ./config/searxng/limiter.toml:/etc/searxng/limiter.toml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - thero
+
+  # ---------------------------------------------------------------------------
+  # Firecrawl (DISABLED - requires complex setup, uncomment to enable)
+  # ---------------------------------------------------------------------------
+  # To enable Firecrawl:
+  # 1. Uncomment the services below
+  # 2. Run: docker compose -f docker/compose.websearch.yml build firecrawl-api
+  # 3. Initialize the database tables (requires manual migration)
+  # ---------------------------------------------------------------------------
+  # firecrawl-api:
+  #   image: firecrawl:latest
+  #   container_name: thero-firecrawl-api
+  #   restart: always
+  #   build:
+  #     context: ../
+  #     dockerfile: docker/Dockerfile.firecrawl
+  #   ports:
+  #     - "3002:3002"
+  #   environment:
+  #     - PORT=3002
+  #     - HOST=0.0.0.0
+  #     - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+  #     - REDIS_RATE_LIMIT_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+  #     - USE_DB_AUTHENTICATION=false
+  #     - SUPABASE_URL=
+  #     - SUPABASE_SERVICE_TOKEN=
+  #     - NUQ_DATABASE_URL=postgres://firecrawl:firecrawl_password@postgres:5432/firecrawl
+  #     - SEARXNG_ENDPOINT=http://searxng:8080
+  #     - SEARXNG_ENGINES=duckduckgo,bing,wikipedia,qwant,mojeek,startpage
+  #     - LOG_LEVEL=debug
+  #   depends_on:
+  #     searxng:
+  #       condition: service_healthy
+  #     postgres:
+  #       condition: service_healthy
+  #   volumes:
+  #     - firecrawl_cache:/app/data
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://localhost:3002/health/liveness"]
+  #     interval: 10s
+  #     timeout: 5s
+  #     retries: 5
+  #     start_period: 60s
+  #   networks:
+  #     - thero
+
+  # firecrawl-worker:
+  #   image: firecrawl:latest
+  #   container_name: thero-firecrawl-worker
+  #   restart: always
+  #   environment:
+  #     - FLY_PROCESS_GROUP=worker
+  #     - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+  #     - REDIS_RATE_LIMIT_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+  #     - USE_DB_AUTHENTICATION=false
+  #     - SUPABASE_URL=
+  #     - SUPABASE_SERVICE_TOKEN=
+  #     - NUQ_DATABASE_URL=postgres://firecrawl:firecrawl_password@postgres:5432/firecrawl
+  #     - NUM_WORKERS_PER_QUEUE=4
+  #   depends_on:
+  #     firecrawl-api:
+  #       condition: service_healthy
+  #     postgres:
+  #       condition: service_healthy
+  #   volumes:
+  #     - firecrawl_cache:/app/data
+  #   networks:
+  #     - thero
+
+  # ---------------------------------------------------------------------------
+  # Firecrawl Database (DISABLED - uncomment with Firecrawl)
+  # ---------------------------------------------------------------------------
+  # postgres:
+  #   image: postgres:16-alpine
+  #   container_name: thero-postgres
+  #   restart: always
+  #   ports:
+  #     - "5433:5432"
+  #   environment:
+  #     - POSTGRES_DB=firecrawl
+  #     - POSTGRES_USER=firecrawl
+  #     - POSTGRES_PASSWORD=firecrawl_password
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "pg_isready -U firecrawl"]
+  #     interval: 5s
+  #     timeout: 3s
+  #     retries: 5
+  #   networks:
+  #     - thero
+
+# -----------------------------------------------------------------------------
+# Volumes (uncomment when enabling Firecrawl)
+# -----------------------------------------------------------------------------
+# volumes:
+#   postgres_data:
+#   firecrawl_cache:

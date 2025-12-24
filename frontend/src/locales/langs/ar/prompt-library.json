@@ -1,0 +1,165 @@
+{
+  "page": {
+    "title": "مكتبة البرومبت",
+    "subtitle": "احفظ وصقل وأعد استخدام أفضل برومبتاتك",
+    "description": "نظم القوالب الخاصة، شارك التعليمات الجاهزة لمساحة العمل، وأدرجها في أي محادثة في ثوانٍ."
+  },
+  "header": {
+    "refresh": "تحديث",
+    "newPrompt": "برومبت جديد"
+  },
+  "filters": {
+    "searchPlaceholder": "البحث بالعنوان أو الوصف أو المحتوى",
+    "scope": {
+      "all": "الكل",
+      "private": "خاص",
+      "shared": "مشترك"
+    },
+    "categoryPlaceholder": "الفئة",
+    "allCategories": "جميع الفئات",
+    "tagsPlaceholder": "العلامات",
+    "allTags": "جميع العلامات",
+    "sortPlaceholder": "ترتيب",
+    "recentlyUpdated": "تم التحديث مؤخراً",
+    "alphabetical": "أ → ي",
+    "reset": "إعادة تعيين"
+  },
+  "prompts": {
+    "title": "البرومبتات",
+    "count": "{{count}} قالب • النطاق: {{scope}}",
+    "updating": "جاري التحديث…",
+    "empty": {
+      "title": "لا توجد برومبتات بعد",
+      "description": "احفظ تعليماتك المفضلة مرة واحدة وأعد استخدامها في جميع المحادثات.",
+      "createButton": "أنشئ برومبتك الأول"
+    },
+    "categories": {
+      "uncategorized": "غير مصنف"
+    },
+    "visibility": {
+      "private": "خاص",
+      "shared": "مشترك"
+    },
+    "noTags": "+{{count}}"
+  },
+  "details": {
+    "selectPrompt": "اختر برومبت للمعاينة",
+    "selectPromptDescription": "اختر قالب من القائمة لفحص التفاصيل والنسخ والمشاركة.",
+    "title": "محتوى البرومبت",
+    "useInChat": "استخدم في المحادثة",
+    "edit": "تحرير",
+    "lastUpdated": "آخر تحديث"
+  },
+  "actions": {
+    "edit": "تحرير",
+    "duplicate": "نسخ",
+    "makePrivate": "اجعله خاصاً",
+    "shareToWorkspace": "مشاركة مع مساحة العمل",
+    "shareWithUsers": "مشاركة مع المستخدمين",
+    "delete": "حذف"
+  },
+  "dialog": {
+    "createTitle": "إنشاء قالب برومبت",
+    "editTitle": "تحرير قالب برومبت",
+    "description": "احتفظ بالبرومبتات منظمة وقابلة لإعادة الاستخدام. أضف علامات، اختر قالب، أو دع الذكاء الاصطناعي يصمم نسخة لك.",
+    "quickTemplates": "قوالب سريعة",
+    "titleLabel": "العنوان",
+    "titlePlaceholder": "مثال: برومبت مراجعة إطلاق المنتج",
+    "visibilityLabel": "الرؤية",
+    "visibilityOptions": {
+      "private": "خاص",
+      "users": "مشاركة مع المستخدمين",
+      "workspace": "مشاركة مع مساحة العمل"
+    },
+    "descriptionLabel": "الوصف",
+    "descriptionPlaceholder": "اشرح ما يجب أن يفعله هذا البرومبت.",
+    "contentLabel": "تعليمات البرومبت",
+    "contentPlaceholder": "أدخل التعليمات الكاملة التي تريد إعادة استخدامها…",
+    "categoryLabel": "الفئة",
+    "categoryPlaceholder": "مثال: بحث، هندسة، مبيعات",
+    "tagsLabel": "العلامات",
+    "tagsPlaceholder": "أضف علامة واضغط Enter",
+    "addTag": "إضافة",
+    "removeTag": "إزالة العلامة {{tag}}",
+    "guides": {
+      "title": "الدليل والممارسات الأفضل",
+      "item1": "صف الدور، النبرة، تنسيق الإخراج، والقيود.",
+      "item2": "سرد خطوات محددة أو قوائم تحقق للمتابعة.",
+      "item3": "شارك كمساحة عمل عندما يكون البرومبت مراجع ومستقر."
+    },
+    "aiAssist": "مساعدة الذكاء الاصطناعي",
+    "refining": "جاري التحسين…",
+    "create": "إنشاء برومبت",
+    "saveChanges": "حفظ التغييرات"
+  },
+  "shareDialog": {
+    "title": "مشاركة البرومبت {{title}}",
+    "selectTeamMembers": "اختر أعضاء الفريق",
+    "searchPlaceholder": "ابحث عن المستخدمين بالاسم أو البريد الإلكتروني...",
+    "noUsersFound": "لم يتم العثور على مستخدمين.",
+    "inviteByEmail": "دعوة عبر البريد الإلكتروني",
+    "invitePlaceholder": "name1@company.com, name2@company.com",
+    "inviteHelper": "استخدم الفاصلة أو المسافة لفصل عدة رسائل بريد إلكترونية.",
+    "currentMembers": "الأعضاء الحاليون",
+    "noMembers": "لا يوجد أعضاء بعد.",
+    "loading": "جاري التحميل…",
+    "ownerLabel": "المالك",
+    "roleRead": "قراءة",
+    "roleWrite": "كتابة",
+    "shareButton": "مشاركة / دعوة",
+    "closeButton": "إغلاق",
+    "successAddUsers": "تمت إضافة المستخدمين إلى البرومبت",
+    "successInvites": "تم إرسال الدعوات",
+    "successRoleUpdate": "تم تحديث الدور",
+    "successRemove": "تمت إزالة العضو",
+    "errorShare": "تعذر إكمال المشاركة/الدعوات",
+    "errorRole": "فشل في تحديث الدور",
+    "errorRemove": "فشل في إزالة العضو",
+    "errorNoSelection": "يرجى اختيار المستخدمين أو إدخال رسائل بريد إلكترونية"
+  },
+  "templates": {
+    "executiveSummary": {
+      "label": "ملخص تنفيذي",
+      "helper": "حول المحتوى الطويل إلى تحديثات حالة موجزة.",
+      "title": "مولد الملخص التنفيذي",
+      "description": "لخص المستندات الطويلة في تحديثات تنفيذية موجزة."
+    },
+    "brainstorm": {
+      "label": "عصف ذهني للأفكار الإبداعية",
+      "helper": "برومبتات تفكير متباعد للتوليد.",
+      "title": "برومبت توليد الأفكار المتباعد",
+      "description": "ولد أفكار غير تقليدية لكنها عملية."
+    },
+    "codeReview": {
+      "label": "مساعد مراجعة الكود",
+      "helper": "قائمة تحقق منظمة لمراجعة طلبات السحب.",
+      "title": "قائمة تحقق مراجعة الكود",
+      "description": "اكتشف التراجعات وحسن القراءة أثناء المراجعات."
+    }
+  },
+  "deleteDialog": {
+    "title": "حذف البرومبت؟",
+    "description": "لا يمكن التراجع عن هذا الإجراء. سيتم إزالة البرومبت {{title}} من مكتبتك.",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "deleting": "جاري الحذف…"
+  },
+  "toast": {
+    "saved": "تم حفظ البرومبت في مكتبتك.",
+    "updated": "تم تحديث البرومبت.",
+    "deleted": "تم حذف البرومبت.",
+    "duplicated": "تم نسخ البرومبت.",
+    "shared": "تم مشاركة البرومبت مع مساحة العمل.",
+    "madePrivate": "تم تعيين البرومبت كخاص.",
+    "copied": "تم نسخ البرومبت. انتقل إلى المحادثة للصقه.",
+    "copyFailed": "تعذر نسخ البرومبت.",
+    "duplicateFailed": "تعذر نسخ البرومبت.",
+    "saveFailed": "فشل في حفظ البرومبت.",
+    "deleteFailed": "تعذر حذف البرومبت.",
+    "visibilityFailed": "فشل في تحديث الرؤية.",
+    "loadFailed": "فشل في تحميل البرومبتات",
+    "assistDrafted": "صمم المساعد قالب برومبت.",
+    "assistFailed": "لم يتمكن المساعد من توليد برومبت في الوقت الحالي.",
+    "titleRequired": "يرجى تقديم عنوان ومحتوى البرومبت."
+  }
+}

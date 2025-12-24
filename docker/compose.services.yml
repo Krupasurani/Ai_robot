@@ -1,0 +1,243 @@
+# =============================================================================
+# Thero AI - Application Services
+# =============================================================================
+# Microservices: Frontend, API Gateway, Query, Indexing, Connector, Docling
+#
+# Usage: docker compose -f docker/compose.infra.yml -f docker/compose.services.yml up
+# =============================================================================
+
+networks:
+  thero:
+    external: true
+    name: thero-network
+
+services:
+  # ---------------------------------------------------------------------------
+  # Frontend (nginx + static files)
+  # ---------------------------------------------------------------------------
+  frontend:
+    image: thero-frontend:${IMAGE_TAG:-latest}
+    container_name: thero-frontend
+    restart: always
+    build:
+      context: ../
+      dockerfile: docker/services/frontend/Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      api-gateway:
+        condition: service_healthy
+    networks:
+      - thero
+
+  # ---------------------------------------------------------------------------
+  # API Gateway (Node.js BFF)
+  # ---------------------------------------------------------------------------
+  api-gateway:
+    image: thero-api-gateway:${IMAGE_TAG:-latest}
+    container_name: thero-api-gateway
+    restart: always
+    build:
+      context: ../
+      dockerfile: docker/services/api-gateway/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=${NODE_ENV:-production}
+      - PORT=8080
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - SECRET_KEY=${SECRET_KEY:-your_random_encryption_secret_key}
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-}
+      # Internal service URLs
+      - QUERY_BACKEND=http://query:8000
+      - CONNECTOR_BACKEND=http://connector:8088
+      - INDEXING_BACKEND=http://indexing:8091
+      # Database connections
+      - ETCD_URL=http://etcd:2379
+      - ARANGO_URL=http://arango:8529
+      - ARANGO_DB_NAME=es
+      - ARANGO_USERNAME=root
+      - ARANGO_PASSWORD=${ARANGO_PASSWORD:-your_password}
+      - MONGO_URI=mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-password}@mongodb:27017/?authSource=admin
+      - MONGO_DB_NAME=es
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - KAFKA_BROKERS=kafka:29092
+    depends_on:
+      - query
+      - connector
+      - indexing
+    networks:
+      - thero
+
+  # ---------------------------------------------------------------------------
+  # Query Service (Python - RAG/Chat)
+  # ---------------------------------------------------------------------------
+  query:
+    image: thero-query:${IMAGE_TAG:-latest}
+    container_name: thero-query
+    restart: always
+    build:
+      context: ../
+      dockerfile: docker/services/query/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - SECRET_KEY=${SECRET_KEY:-your_random_encryption_secret_key}
+      # Database connections
+      - ETCD_URL=http://etcd:2379
+      - ETCD_HOST=etcd
+      - ARANGO_URL=http://arango:8529
+      - ARANGO_DB_NAME=es
+      - ARANGO_USERNAME=root
+      - ARANGO_PASSWORD=${ARANGO_PASSWORD:-your_password}
+      - MONGO_URI=mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-password}@mongodb:27017/?authSource=admin
+      - MONGO_DB_NAME=es
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+      - KAFKA_BROKERS=kafka:29092
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      - QDRANT_API_KEY=${QDRANT_API_KEY:-your_qdrant_secret_api_key}
+    volumes:
+      - query_cache:/app/.cache
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 4G
+    networks:
+      - thero
+
+  # ---------------------------------------------------------------------------
+  # Docling Service (Python - Document Processing Coordinator)
+  # ---------------------------------------------------------------------------
+  # This service uses local Docling library for structure extraction.
+  # Digital PDFs are processed locally via PyMuPDF (fast).
+  # Scanned PDFs use OCRmyPDF for OCR, then local Docling for structure.
+  docling:
+    image: thero-docling:${IMAGE_TAG:-latest}
+    container_name: thero-docling
+    restart: always
+    build:
+      context: ../
+      dockerfile: docker/services/docling/Dockerfile
+    ports:
+      - "8081:8081"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - DOCLING_PORT=8081
+      # Database connections (for config service)
+      - ETCD_URL=http://etcd:2379
+      - ETCD_HOST=etcd
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8081/health"]
+      interval: 30s
+      timeout: 10s
+      start_period: 30s
+      retries: 3
+    networks:
+      - thero
+
+  # ---------------------------------------------------------------------------
+  # Indexing Service (Python - Document Processing)
+  # ---------------------------------------------------------------------------
+  indexing:
+    image: thero-indexing:${IMAGE_TAG:-latest}
+    container_name: thero-indexing
+    restart: always
+    build:
+      context: ../
+      dockerfile: docker/services/indexing/Dockerfile
+    ports:
+      - "8091:8091"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - SECRET_KEY=${SECRET_KEY:-your_random_encryption_secret_key}
+      # Docling service URL (internal docker network)
+      - DOCLING_SERVICE_URL=http://docling:8081
+      # Database connections
+      - ETCD_URL=http://etcd:2379
+      - ETCD_HOST=etcd
+      - ARANGO_URL=http://arango:8529
+      - ARANGO_DB_NAME=es
+      - ARANGO_USERNAME=root
+      - ARANGO_PASSWORD=${ARANGO_PASSWORD:-your_password}
+      - MONGO_URI=mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-password}@mongodb:27017/?authSource=admin
+      - MONGO_DB_NAME=es
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+      - KAFKA_BROKERS=kafka:29092
+      - QDRANT_HOST=qdrant
+      - QDRANT_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      - QDRANT_API_KEY=${QDRANT_API_KEY:-your_qdrant_secret_api_key}
+    volumes:
+      - indexing_cache:/app/.cache
+      - indexing_data:/data/thero
+    depends_on:
+      docling:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '4'
+          memory: 4G
+    networks:
+      - thero
+
+  # ---------------------------------------------------------------------------
+  # Connector Service (Python - OAuth/Sync)
+  # ---------------------------------------------------------------------------
+  connector:
+    image: thero-connector:${IMAGE_TAG:-latest}
+    container_name: thero-connector
+    restart: always
+    build:
+      context: ../
+      dockerfile: docker/services/connector/Dockerfile
+    ports:
+      - "8088:8088"
+    environment:
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+      - SECRET_KEY=${SECRET_KEY:-your_random_encryption_secret_key}
+      - CONNECTOR_PUBLIC_BACKEND=${CONNECTOR_PUBLIC_BACKEND:-}
+      # Database connections
+      - ETCD_URL=http://etcd:2379
+      - ETCD_HOST=etcd
+      - ARANGO_URL=http://arango:8529
+      - ARANGO_DB_NAME=es
+      - ARANGO_USERNAME=root
+      - ARANGO_PASSWORD=${ARANGO_PASSWORD:-your_password}
+      - MONGO_URI=mongodb://${MONGO_USERNAME:-admin}:${MONGO_PASSWORD:-password}@mongodb:27017/?authSource=admin
+      - MONGO_DB_NAME=es
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      - REDIS_URL=redis://:${REDIS_PASSWORD:-}@redis:6379
+      - KAFKA_BROKERS=kafka:29092
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 2G
+    networks:
+      - thero
+
+volumes:
+  query_cache:
+  indexing_cache:
+  indexing_data:
+

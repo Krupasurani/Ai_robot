@@ -1,0 +1,48 @@
+use_default_settings:
+  engines:
+    keep_only:
+      # Brave entfernt wegen HTTP/2 Verbindungsproblemen über Proxies
+      - duckduckgo
+      - bing
+      - wikipedia
+      - qwant
+      - mojeek
+      - startpage
+
+server:
+  bind_address: "0.0.0.0"
+  port: 8080
+  limiter: false # Wichtig! Rate-Limiter aus, sonst blockt SearXNG Firecrawl
+  secret_key: "9f8c4d1a2b3e7c5d9a6b4e2f1c8d7a6b"
+
+search:
+  safe_search: 0
+  autocomplete: "duckduckgo"
+  formats:
+    - html
+    - json
+
+outgoing:
+  request_timeout: 15.0
+  max_request_timeout: 25.0
+  # HTTP/2 deaktivieren - verhindert "server disconnected" Fehler mit Proxies
+  enable_http2: false
+  # Verbindungs-Pooling für stabilere Verbindungen
+  pool_connections: 100
+  pool_maxsize: 20
+  # Retries bei temporären Fehlern
+  retries: 3
+  proxies:
+    # Wir definieren explizit BEIDE Protokolle getrennt.
+    # Das ist die stabilste Methode für die SearXNG Python-Bibliothek.
+    "http://":
+      - http://PTb6eN4gDomIYWaq:7hi0rkJOUBwn7wqr@geo.iproyal.com:12321
+    "https://":
+      - http://PTb6eN4gDomIYWaq:7hi0rkJOUBwn7wqr@geo.iproyal.com:12321
+  # Extra Timeout für Proxy-Verbindungen (muss int sein, kein float)
+  extra_proxy_timeout: 10
+
+redis:
+  url: redis://:hello123@redis:6379/0
+  cache_results: true
+  cache_urls: true

@@ -1,0 +1,451 @@
+{
+  "auth": {
+    "title": "Authentication",
+    "description": "Configure how users sign in to your application",
+    "documentation": "Documentation",
+    "failed_load": "Failed to load authentication settings",
+    "only_one_method": "Only one authentication method can be enabled at a time",
+    "otp_requires_smtp": "OTP authentication requires SMTP configuration",
+    "updated_success": "Authentication settings updated successfully",
+    "failed_save": "Failed to save changes",
+    "failed_save_retry": "Failed to save changes. Please try again.",
+    "select_method": "Select authentication method",
+    "only_one_method_banner": "Only one authentication method can be active at a time. Select a method below to enable it for all users.",
+    "active_method": "Active method",
+    "no_active_method": "No authentication method active",
+    "saving": "Saving...",
+    "save_changes": "Save Changes",
+    "enable_edit_mode": "Enable edit mode to change authentication method",
+    "requires_smtp_error": "{{title}} requires SMTP to be configured first",
+    "please_configure_first": "Please configure {{title}} first",
+    "methods_ready": "{{count}} method ready",
+    "methods_ready_plural": "{{count}} methods ready",
+    "methods_require_setup": "{{count}} method require setup",
+    "methods_require_setup_plural": "{{count}} methods require setup",
+    "server_configuration": "Server Configuration",
+    "configure": "Configure",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "methods": {
+      "password": {
+        "title": "Password",
+        "description": "Email and password login"
+      },
+      "otp": {
+        "title": "Email OTP",
+        "description": "One-time password via email"
+      },
+      "google": {
+        "title": "Google",
+        "description": "Sign in with Google",
+        "dialog_desc": "Allow users to sign in with their Google accounts"
+      },
+      "microsoft": {
+        "title": "Microsoft",
+        "description": "Sign in with Microsoft",
+        "dialog_desc": "Allow users to sign in with their Microsoft accounts"
+      },
+      "azureAd": {
+        "title": "Entra ID",
+        "description": "Enterprise Azure authentication",
+        "dialog_desc": "Enterprise authentication via Microsoft Entra ID"
+      },
+      "samlSso": {
+        "title": "SAML SSO",
+        "description": "Single Sign-On with SAML",
+        "dialog_desc": "Single Sign-On with SAML protocol"
+      },
+      "oauth": {
+        "title": "OAuth",
+        "description": "Generic OAuth 2.0 provider",
+        "dialog_desc": "Configure a generic OAuth 2.0 provider"
+      },
+      "smtp": {
+        "title": "SMTP",
+        "description": "Email server for OTP and notifications"
+      }
+    },
+    "dialog": {
+      "configure_title": "Configure {{title}}",
+      "save_configuration": "Save Configuration"
+    }
+  },
+  "platform": {
+    "title": "Platform Settings",
+    "description": "Configure platform-wide options for all workspace members",
+    "unsaved": "Unsaved",
+    "saved": "Saved",
+    "save_changes": "Save changes",
+    "dismiss": "Dismiss",
+    "loading": "Loading settings...",
+    "success": "Platform settings saved successfully",
+    "failed_load": "Failed to load settings",
+    "failed_save": "Failed to save settings",
+    "positive_number_error": "Please enter a positive number",
+    "about_title": "About platform configuration",
+    "about_desc": "Changes to platform settings affect all workspace members and take effect immediately. Feature flags help you roll out new functionality gradually—toggle them with care and communicate updates to your teams.",
+    "file_upload": {
+      "title": "File Upload Limit",
+      "description": "Set the maximum file size allowed for uploads across the platform",
+      "max_size": "Maximum file size",
+      "current_limit": "Current limit",
+      "info": "Changes apply immediately to all file uploads, including the Knowledge Base and any backend-enforced limits."
+    },
+    "feature_flags": {
+      "title": "Feature Flags",
+      "description": "Toggle access to beta or experimental features",
+      "active_count": "{{active}} of {{total}} active",
+      "no_flags": "No feature flags configured yet",
+      "flags_appear": "Feature flags will appear here when available",
+      "show_less": "Show less",
+      "show_more": "Show {{count}} more flags"
+    },
+    "email_template": {
+      "title": "System Email Template",
+      "description": "Customize invitation emails sent to new workspace members",
+      "use_custom": "Use custom Markdown template",
+      "active_desc": "Custom template is active for all invitation emails",
+      "default_desc": "Using default HTML email layout",
+      "subject": "Email subject",
+      "subject_placeholder": "You are invited to join...",
+      "write": "Write",
+      "preview": "Preview",
+      "reset": "Reset to default",
+      "markdown_placeholder": "Write your Markdown content here...",
+      "supports_vars": "Supports Markdown and template variables",
+      "preview_info": "How your email will appear to recipients",
+      "layout_info": "The preview shows Markdown rendering only. Production emails are automatically wrapped in a responsive layout with your organization's branding."
+    }
+  },
+  "preferences": {
+    "language_updated": "Language updated",
+    "preferences_saved": "Preferences saved",
+    "failed_save": "Failed to save preferences",
+    "appearance": "Appearance",
+    "appearance_desc": "Choose how the application looks to you",
+    "theme": "Theme",
+    "themes": {
+      "light": "Light",
+      "light_desc": "Bright and clean",
+      "dark": "Dark",
+      "dark_desc": "Easy on the eyes",
+      "system": "System",
+      "system_desc": "Match your device"
+    },
+    "lang_region": "Language & Region",
+    "lang_region_desc": "Set your preferred language and regional settings",
+    "display_lang": "Display Language",
+    "select_lang": "Select language",
+    "lang_info": "Affects UI text, date and number formatting throughout the application.",
+    "display_options": "Display Options",
+    "display_options_desc": "Customize your viewing experience",
+    "compact_layout": "Compact Layout",
+    "compact_layout_desc": "Reduce paddings and spacing for dense views"
+  },
+  "services": {
+    "title": "Service Settings",
+    "description": "Manage your infrastructure, monitor system health, and configure integrations for your platform.",
+    "infrastructure": "Infrastructure",
+    "system_health": "System Health",
+    "system_health_desc": "Real-time status of core platform components",
+    "refresh": "Refresh",
+    "last_check": "Last check",
+    "public_endpoints": "Public Endpoints",
+    "public_endpoints_desc": "External URLs for application access and integrations",
+    "configured": "Configured",
+    "integrations_api": "Integrations & API",
+    "event_webhooks": "Event Webhooks",
+    "event_webhooks_desc": "Notify external services about platform events",
+    "api_rate_limiting": "API Rate Limiting",
+    "current_limit_rate": "Current limit: {{count}} requests/min",
+    "webhook_api_info": "Webhook configuration is managed via the API. Check the documentation for implementation details.",
+    "monitoring": "Monitoring",
+    "system_alerts": "System Alerts",
+    "system_alerts_desc": "Critical errors and performance issues",
+    "maintenance": "Maintenance",
+    "maintenance_desc": "Scheduled windows and updates",
+    "security": "Security",
+    "security_desc": "Auth events and access logs",
+    "view_docs": "View Full Service Documentation",
+    "status": {
+      "healthy": "Healthy",
+      "degraded": "Degraded",
+      "offline": "Offline",
+      "unknown": "Unknown"
+    },
+    "messages": {
+      "service_config_updated": "Service configuration updated",
+      "config_saved": "Configuration saved successfully",
+      "notification_updated": "Notification settings updated",
+      "api_settings_updated": "API settings updated",
+      "webhook_updated": "Webhook settings updated"
+    },
+    "internal": {
+      "frontendPublicUrl": {
+        "title": "Frontend Public URL",
+        "description": "The public endpoint used for user access, OAuth callbacks, and email communications.",
+        "short_desc": "Publicly accessible URL for the frontend application",
+        "help": "The full URL including the protocol (https://)."
+      },
+      "connectorPublicUrl": {
+        "title": "Connectors Public URL",
+        "description": "The endpoint used for receiving webhooks and callbacks from third-party services.",
+        "short_desc": "Publicly accessible URL for connector services",
+        "help": "The base URL for external service interactions."
+      }
+    },
+    "sheet": {
+      "configure_endpoint": "Configure service endpoint",
+      "overview": "Overview",
+      "fetching_config": "Fetching configuration...",
+      "public_endpoint_url": "Public Endpoint URL",
+      "active_url": "Active URL",
+      "recommendations": "Recommendations",
+      "tips": [
+        "Use HTTPS for production environments",
+        "Ensure the domain is publicly resolvable",
+        "Avoid including trailing slashes"
+      ],
+      "discard_changes": "Discard Changes",
+      "apply_changes": "Apply Changes",
+      "invalid_url": "Invalid URL format",
+      "failed_load": "Failed to load current configuration",
+      "failed_save_retry": "Failed to save configuration. Please try again."
+    }
+  },
+  "license": {
+    "title": "License & Billing",
+    "manage_subscription": "Manage your {{planName}} subscription and billing",
+    "settings": "Settings",
+    "status": {
+      "active": "Active",
+      "trial": "Trial",
+      "canceled": "Canceled",
+      "past_due": "Past Due"
+    },
+    "plan": {
+      "current_plan": "Your current subscription plan",
+      "upgrade_plan": "Upgrade plan",
+      "price_per_seat": "Price per seat",
+      "billing": "Billing",
+      "annual": "Annual",
+      "monthly": "Monthly",
+      "next_invoice": "Next invoice",
+      "monthly_total": "Monthly total",
+      "per_month": "/mo"
+    },
+    "usage": {
+      "seats": "Seats",
+      "seats_desc": "License allocation for your team",
+      "almost_full": "Almost full",
+      "high_usage": "High usage",
+      "used_percentage": "{{count}}% used",
+      "active": "Active",
+      "available": "Available",
+      "adjust_seats": "Adjust seats",
+      "update": "Update",
+      "updating": "Updating...",
+      "min_seats_required": "Minimum {{count}} seats required (currently in use)"
+    },
+    "payment": {
+      "title": "Payment method",
+      "no_method": "No payment method configured",
+      "add_method": "Add payment method",
+      "credit_card": "Credit card",
+      "bank_transfer": "Bank transfer",
+      "invoice": "Invoice",
+      "edit": "Edit",
+      "expires": "Expires {{date}}",
+      "bank_transfer_info": "Invoices will be sent to your billing email for bank transfer payment.",
+      "invoice_info": "Monthly invoice with NET 30 payment terms."
+    },
+    "invoices": {
+      "title": "Invoices",
+      "billing_history": "Billing history and downloads",
+      "view_all": "View all",
+      "no_invoices": "No invoices yet",
+      "status": {
+        "paid": "Paid",
+        "open": "Open",
+        "pending": "Pending",
+        "failed": "Failed"
+      }
+    },
+    "tiers": {
+      "starter": "Starter",
+      "pro": "Pro",
+      "enterprise": "Enterprise"
+    }
+  },
+  "personal_profile": {
+    "title": "Personal Profile",
+    "description": "Manage your personal information and preferences",
+    "photo": {
+      "title": "Profile Photo",
+      "description": "This photo will be displayed across the platform",
+      "no_designation": "No designation set",
+      "change": "Change photo",
+      "upload": "Upload photo",
+      "remove": "Remove",
+      "success": "Profile photo updated successfully",
+      "failed": "Failed to upload profile photo",
+      "removed": "Profile photo removed",
+      "remove_failed": "Failed to remove profile photo"
+    },
+    "security": {
+      "title": "Security",
+      "description": "Manage your password",
+      "password": "Password",
+      "password_desc": "Change your password to keep your account secure",
+      "change": "Change Password",
+      "dialog_title": "Change Password",
+      "dialog_desc": "Enter your current password and choose a new one.",
+      "current_label": "Current password",
+      "current_placeholder": "Enter your current password",
+      "new_label": "New password",
+      "new_placeholder": "Enter your new password",
+      "requirement_help": "Password must have at least 8 characters with lowercase, uppercase, number and symbol",
+      "confirm_label": "Confirm new password",
+      "confirm_placeholder": "Repeat your new password",
+      "update_button": "Update Password",
+      "success": "Password changed successfully",
+      "failed": "Failed to change password"
+    },
+    "info": {
+      "title": "Personal Information",
+      "description": "Your basic profile details",
+      "full_name": "Full Name",
+      "full_name_placeholder": "Enter your full name",
+      "designation": "Designation",
+      "designation_placeholder": "e.g. Software Engineer"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "description": "How others can reach you",
+      "email": "Email address",
+      "email_placeholder": "Enter your email address",
+      "logout_warning": "Changing your email will log you out of the system"
+    },
+    "changes": {
+      "unsaved": "You have unsaved changes",
+      "discard": "Discard",
+      "save": "Save Changes",
+      "success": "Profile updated successfully",
+      "failed": "Failed to update user"
+    },
+    "crop": {
+      "title": "Crop Profile Photo",
+      "description": "Adjust your photo using zoom, rotation, and flip controls",
+      "drag_to_reposition": "Drag to reposition",
+      "zoom": "Zoom",
+      "rotation": "Rotation",
+      "preview": "Preview",
+      "output": "Output: 400×400px",
+      "cancel": "Cancel",
+      "apply": "Apply",
+      "processing": "Processing...",
+      "reset": "Reset"
+    },
+    "email_confirm": {
+      "title": "Confirm Email Change",
+      "change_from": "Your email will be changed from:",
+      "relogin_info": "You will need to log in again with your new email address. All your data and settings will remain intact.",
+      "confirm_button": "Confirm & Log Out"
+    }
+  },
+  "company_profile": {
+    "title": "Company Settings",
+    "description": "Manage your company information and branding",
+    "admin_access": "Admin Access",
+    "logo": {
+      "title": "Company Logo",
+      "description": "Your logo will appear on your account dashboard, emails, and documents generated from Thero.",
+      "no_logo": "No logo uploaded",
+      "add_logo": "Add your company logo",
+      "change": "Change",
+      "upload": "Upload",
+      "recommended": "Recommended: Square image, at least 400×400px. Supports PNG, JPG, or SVG.",
+      "success": "Logo updated successfully!",
+      "removed": "Logo removed successfully!",
+      "failed_remove": "Failed to remove logo",
+      "failed_upload": "Failed to upload logo"
+    },
+    "basic": {
+      "title": "Basic Information",
+      "description": "Essential details about your organization",
+      "registered_name": "Registered Name",
+      "name_placeholder": "Enter your company's registered name",
+      "required": "Required",
+      "legal_info": "The legal name the company was incorporated under",
+      "display_name": "Display Name",
+      "display_placeholder": "Short name for display",
+      "display_info": "The name of the company to display within Thero",
+      "contact_email": "Contact Email"
+    },
+    "address": {
+      "title": "Address Information",
+      "description": "Your company's physical location",
+      "street": "Street Address",
+      "street_placeholder": "Start typing address for suggestions...",
+      "city": "City",
+      "city_placeholder": "Enter city",
+      "state": "State/Province",
+      "state_placeholder": "Enter state or province",
+      "zip": "Zip/Postal Code",
+      "zip_placeholder": "Enter postal code",
+      "country": "Country",
+      "country_placeholder": "Select country"
+    },
+    "save": {
+      "saving": "Saving changes...",
+      "button": "Save changes",
+      "failed": "Failed to update organization"
+    },
+    "crop": {
+      "title": "Crop Your Logo",
+      "description": "Drag to reposition your logo, use the slider to zoom in or out"
+    }
+  },
+  "users_groups": {
+    "title": "Users & Groups",
+    "description": "Manage team members and organize them into groups for easier permission management.",
+    "no_licenses": "No licenses available",
+    "licenses_available": "{{count}} licenses available",
+    "manage_settings": "Manage settings",
+    "users": "Users",
+    "groups": "Groups",
+    "pending_invites": "Pending invites",
+    "loading": "Loading...",
+    "add_user": {
+      "invite_team": "Invite team members",
+      "invite_desc": "Send email invitations to add new members to your team.",
+      "no_licenses_warning": "No licenses available. Increase your seat allocation before sending invites.",
+      "email_addresses": "Email addresses",
+      "email_placeholder": "name@company.com",
+      "add_another_email": "Add another email...",
+      "add": "Add",
+      "emails_added": "{{count}} email added",
+      "emails_added_plural": "{{count}} emails added",
+      "add_to_groups": "Add to groups (optional)",
+      "select_groups": "Select groups...",
+      "permissions_inherit_info": "New members will inherit the permissions of selected groups.",
+      "cancel": "Cancel",
+      "sending": "Sending...",
+      "send_invite": "Send invite",
+      "send_invites": "Send invites",
+      "no_free_licenses": "No free licenses available",
+      "add_at_least_one_email": "Please add at least one email address",
+      "invites_sent": "{{count}} invite sent",
+      "invites_sent_plural": "{{count}} invites sent",
+      "failed_send_invites": "Failed to send invites",
+      "email_already_added": "This email has already been added",
+      "valid_email_error": "Please enter a valid email address"
+    },
+    "edit_group": {
+      "title": "Group settings",
+      "manage_for": "Manage settings for",
+      "coming_soon": "Group settings and permissions management is coming soon. You'll be able to configure access controls, rename groups, and manage advanced settings.",
+      "close": "Close"
+    }
+  }
+}

@@ -1,0 +1,451 @@
+{
+  "auth": {
+    "title": "Authentifizierung",
+    "description": "Konfigurieren Sie, wie sich Benutzer bei Ihrer Anwendung anmelden",
+    "documentation": "Dokumentation",
+    "failed_load": "Fehler beim Laden der Authentifizierungseinstellungen",
+    "only_one_method": "Es kann nur eine Authentifizierungsmethode gleichzeitig aktiviert sein",
+    "otp_requires_smtp": "OTP-Authentifizierung erfordert eine SMTP-Konfiguration",
+    "updated_success": "Authentifizierungseinstellungen erfolgreich aktualisiert",
+    "failed_save": "Fehler beim Speichern der Änderungen",
+    "failed_save_retry": "Fehler beim Speichern der Änderungen. Bitte versuchen Sie es erneut.",
+    "select_method": "Authentifizierungsmethode auswählen",
+    "only_one_method_banner": "Es kann nur eine Authentifizierungsmethode gleichzeitig aktiv sein. Wählen Sie unten eine Methode aus, um sie für alle Benutzer zu aktivieren.",
+    "active_method": "Aktive Methode",
+    "no_active_method": "Keine Authentifizierungsmethode aktiv",
+    "saving": "Speichert...",
+    "save_changes": "Änderungen speichern",
+    "enable_edit_mode": "Aktivieren Sie den Bearbeitungsmodus, um die Authentifizierungsmethode zu ändern",
+    "requires_smtp_error": "{{title}} erfordert zuerst eine SMTP-Konfiguration",
+    "please_configure_first": "Bitte konfigurieren Sie {{title}} zuerst",
+    "methods_ready": "{{count}} Methode bereit",
+    "methods_ready_plural": "{{count}} Methoden bereit",
+    "methods_require_setup": "{{count} Methode erfordert Einrichtung",
+    "methods_require_setup_plural": "{{count}} Methoden erfordern Einrichtung",
+    "server_configuration": "Server-Konfiguration",
+    "configure": "Konfigurieren",
+    "cancel": "Abbrechen",
+    "edit": "Bearbeiten",
+    "methods": {
+      "password": {
+        "title": "Passwort",
+        "description": "Anmeldung mit E-Mail und Passwort"
+      },
+      "otp": {
+        "title": "E-Mail OTP",
+        "description": "Einmalpasswort per E-Mail"
+      },
+      "google": {
+        "title": "Google",
+        "description": "Mit Google anmelden",
+        "dialog_desc": "Benutzern die Anmeldung mit ihren Google-Konten ermöglichen"
+      },
+      "microsoft": {
+        "title": "Microsoft",
+        "description": "Mit Microsoft anmelden",
+        "dialog_desc": "Benutzern die Anmeldung mit ihren Microsoft-Konten ermöglichen"
+      },
+      "azureAd": {
+        "title": "Entra ID",
+        "description": "Enterprise Azure-Authentifizierung",
+        "dialog_desc": "Enterprise-Authentifizierung über Microsoft Entra ID"
+      },
+      "samlSso": {
+        "title": "SAML SSO",
+        "description": "Single Sign-On mit SAML",
+        "dialog_desc": "Single Sign-On mit dem SAML-Protokoll"
+      },
+      "oauth": {
+        "title": "OAuth",
+        "description": "Generischer OAuth 2.0 Anbieter",
+        "dialog_desc": "Einen generischen OAuth 2.0 Anbieter konfigurieren"
+      },
+      "smtp": {
+        "title": "SMTP",
+        "description": "E-Mail-Server für OTP und Benachrichtigungen"
+      }
+    },
+    "dialog": {
+      "configure_title": "{{title}} konfigurieren",
+      "save_configuration": "Konfiguration speichern"
+    }
+  },
+  "platform": {
+    "title": "Plattform-Einstellungen",
+    "description": "Konfigurieren Sie plattformweite Optionen für alle Workspace-Mitglieder",
+    "unsaved": "Nicht gespeichert",
+    "saved": "Gespeichert",
+    "save_changes": "Änderungen speichern",
+    "dismiss": "Verwerfen",
+    "loading": "Einstellungen werden geladen...",
+    "success": "Plattform-Einstellungen erfolgreich gespeichert",
+    "failed_load": "Fehler beim Laden der Einstellungen",
+    "failed_save": "Fehler beim Speichern der Einstellungen",
+    "positive_number_error": "Bitte geben Sie eine positive Zahl ein",
+    "about_title": "Über die Plattform-Konfiguration",
+    "about_desc": "Änderungen an den Plattform-Einstellungen betreffen alle Workspace-Mitglieder und treten sofort in Kraft. Feature-Flags helfen Ihnen, neue Funktionen schrittweise einzuführen – schalten Sie diese mit Vorsicht um und kommunizieren Sie Updates an Ihre Teams.",
+    "file_upload": {
+      "title": "Datei-Upload-Limit",
+      "description": "Legen Sie die maximale Dateigröße fest, die für Uploads auf der gesamten Plattform zulässig ist",
+      "max_size": "Maximale Dateigröße",
+      "current_limit": "Aktuelles Limit",
+      "info": "Änderungen gelten sofort für alle Datei-Uploads, einschließlich der Wissensdatenbank und aller vom Backend erzwungenen Limits."
+    },
+    "feature_flags": {
+      "title": "Feature Flags",
+      "description": "Zugriff auf Beta- oder experimentelle Funktionen umschalten",
+      "active_count": "{{active}} von {{total}} aktiv",
+      "no_flags": "Noch keine Feature-Flags konfiguriert",
+      "flags_appear": "Feature-Flags werden hier angezeigt, wenn sie verfügbar sind",
+      "show_less": "Weniger anzeigen",
+      "show_more": "{{count}} weitere Flags anzeigen"
+    },
+    "email_template": {
+      "title": "System-E-Mail-Vorlage",
+      "description": "Anpassung der Einladungs-E-Mails, die an neue Workspace-Mitglieder gesendet werden",
+      "use_custom": "Benutzerdefinierte Markdown-Vorlage verwenden",
+      "active_desc": "Die benutzerdefinierte Vorlage ist für alle Einladungs-E-Mails aktiv",
+      "default_desc": "Standard-HTML-E-Mail-Layout verwenden",
+      "subject": "E-Mail-Betreff",
+      "subject_placeholder": "Du bist eingeladen, beizutreten...",
+      "write": "Schreiben",
+      "preview": "Vorschau",
+      "reset": "Auf Standard zurücksetzen",
+      "markdown_placeholder": "Schreiben Sie hier Ihren Markdown-Inhalt...",
+      "supports_vars": "Unterstützt Markdown- und Vorlagenvariablen",
+      "preview_info": "Wie Ihre E-Mail für die Empfänger aussehen wird",
+      "layout_info": "Die Vorschau zeigt nur das Markdown-Rendering. Produktions-E-Mails werden automatisch in ein responsives Layout mit dem Branding Ihrer Organisation eingebettet."
+    }
+  },
+  "preferences": {
+    "language_updated": "Sprache aktualisiert",
+    "preferences_saved": "Einstellungen gespeichert",
+    "failed_save": "Fehler beim Speichern der Einstellungen",
+    "appearance": "Erscheinungsbild",
+    "appearance_desc": "Wählen Sie aus, wie die Anwendung für Sie aussehen soll",
+    "theme": "Thema",
+    "themes": {
+      "light": "Hell",
+      "light_desc": "Hell und sauber",
+      "dark": "Dunkel",
+      "dark_desc": "Schonend für die Augen",
+      "system": "System",
+      "system_desc": "An Ihr Gerät anpassen"
+    },
+    "lang_region": "Sprache & Region",
+    "lang_region_desc": "Legen Sie Ihre bevorzugte Sprache und Regionaleinstellungen fest",
+    "display_lang": "Anzeigesprache",
+    "select_lang": "Sprache auswählen",
+    "lang_info": "Beeinflusst UI-Texte, Datums- und Zahlenformate in der gesamten Anwendung.",
+    "display_options": "Anzeigeoptionen",
+    "display_options_desc": "Passen Sie Ihr Seherlebnis an",
+    "compact_layout": "Kompaktes Layout",
+    "compact_layout_desc": "Abstände und Abstände für dichte Ansichten reduzieren"
+  },
+  "services": {
+    "title": "Dienst-Einstellungen",
+    "description": "Verwalten Sie Ihre Infrastruktur, überwachen Sie den Systemstatus und konfigurieren Sie Integrationen für Ihre Plattform.",
+    "infrastructure": "Infrastruktur",
+    "system_health": "Systemstatus",
+    "system_health_desc": "Echtzeit-Status der zentralen Plattformkomponenten",
+    "refresh": "Aktualisieren",
+    "last_check": "Letzte Prüfung",
+    "public_endpoints": "Öffentliche Endpunkte",
+    "public_endpoints_desc": "Externe URLs für Anwendungszugriff und Integrationen",
+    "configured": "Konfiguriert",
+    "integrations_api": "Integrationen & API",
+    "event_webhooks": "Event-Webhooks",
+    "event_webhooks_desc": "Externe Dienste über Plattform-Events benachrichtigen",
+    "api_rate_limiting": "API-Ratenbegrenzung",
+    "current_limit_rate": "Aktuelles Limit: {{count}} Anfragen/Min.",
+    "webhook_api_info": "Die Webhook-Konfiguration wird über die API verwaltet. Informationen zur Implementierung finden Sie in der Dokumentation.",
+    "monitoring": "Überwachung",
+    "system_alerts": "System-Warnungen",
+    "system_alerts_desc": "Kritische Fehler und Leistungsprobleme",
+    "maintenance": "Wartung",
+    "maintenance_desc": "Geplante Fenster und Updates",
+    "security": "Sicherheit",
+    "security_desc": "Auth-Events und Zugriffsprotokolle",
+    "view_docs": "Vollständige Dienst-Dokumentation anzeigen",
+    "status": {
+      "healthy": "Gesund",
+      "degraded": "Eingeschränkt",
+      "offline": "Offline",
+      "unknown": "Unbekannt"
+    },
+    "messages": {
+      "service_config_updated": "Dienstkonfiguration aktualisiert",
+      "config_saved": "Konfiguration erfolgreich gespeichert",
+      "notification_updated": "Benachrichtigungseinstellungen aktualisiert",
+      "api_settings_updated": "API-Einstellungen aktualisiert",
+      "webhook_updated": "Webhook-Einstellungen aktualisiert"
+    },
+    "internal": {
+      "frontendPublicUrl": {
+        "title": "Öffentliche Frontend-URL",
+        "description": "Der öffentliche Endpunkt, der für Benutzerzugriff, OAuth-Callbacks und E-Mail-Kommunikation verwendet wird.",
+        "short_desc": "Öffentlich zugängliche URL für die Frontend-Anwendung",
+        "help": "Die vollständige URL einschließlich des Protokolls (https://)."
+      },
+      "connectorPublicUrl": {
+        "title": "Öffentliche Connectors-URL",
+        "description": "Der Endpunkt, der für den Empfang von Webhooks und Callbacks von Drittanbieter-Diensten verwendet wird.",
+        "short_desc": "Öffentlich zugängliche URL für Connector-Dienste",
+        "help": "Die Basis-URL für Interaktionen mit externen Diensten."
+      }
+    },
+    "sheet": {
+      "configure_endpoint": "Dienst-Endpunkt konfigurieren",
+      "overview": "Übersicht",
+      "fetching_config": "Konfiguration wird abgerufen...",
+      "public_endpoint_url": "Öffentliche Endpunkt-URL",
+      "active_url": "Aktive URL",
+      "recommendations": "Empfehlungen",
+      "tips": [
+        "Verwenden Sie HTTPS für Produktionsumgebungen",
+        "Stellen Sie sicher, dass die Domain öffentlich auflösbar ist",
+        "Vermeiden Sie abschließende Schrägstriche"
+      ],
+      "discard_changes": "Änderungen verwerfen",
+      "apply_changes": "Änderungen anwenden",
+      "invalid_url": "Ungültiges URL-Format",
+      "failed_load": "Aktuelle Konfiguration konnte nicht geladen werden",
+      "failed_save_retry": "Konfiguration konnte nicht gespeichert werden. Bitte versuchen Sie es erneut."
+    }
+  },
+  "license": {
+    "title": "Lizenz & Abrechnung",
+    "manage_subscription": "Verwalten Sie Ihr {{planName}}-Abonnement und Ihre Abrechnung",
+    "settings": "Einstellungen",
+    "status": {
+      "active": "Aktiv",
+      "trial": "Testversion",
+      "canceled": "Gekündigt",
+      "past_due": "Überfällig"
+    },
+    "plan": {
+      "current_plan": "Ihr aktueller Abonnementplan",
+      "upgrade_plan": "Plan upgraden",
+      "price_per_seat": "Preis pro Platz",
+      "billing": "Abrechnung",
+      "annual": "Jährlich",
+      "monthly": "Monatlich",
+      "next_invoice": "Nächste Rechnung",
+      "monthly_total": "Monatliche Gesamtsumme",
+      "per_month": "/Mo"
+    },
+    "usage": {
+      "seats": "Plätze",
+      "seats_desc": "Lizenzzuteilung für Ihr Team",
+      "almost_full": "Fast voll",
+      "high_usage": "Hohe Auslastung",
+      "used_percentage": "{{count}}% genutzt",
+      "active": "Aktiv",
+      "available": "Verfügbar",
+      "adjust_seats": "Plätze anpassen",
+      "update": "Aktualisieren",
+      "updating": "Aktualisierung...",
+      "min_seats_required": "Mindestens {{count}} Plätze erforderlich (derzeit in Gebrauch)"
+    },
+    "payment": {
+      "title": "Zahlungsmethode",
+      "no_method": "Keine Zahlungsmethode konfiguriert",
+      "add_method": "Zahlungsmethode hinzufügen",
+      "credit_card": "Kreditkarte",
+      "bank_transfer": "Banküberweisung",
+      "invoice": "Rechnung",
+      "edit": "Bearbeiten",
+      "expires": "Läuft ab am {{date}}",
+      "bank_transfer_info": "Rechnungen werden für die Banküberweisung an Ihre Abrechnungs-E-Mail gesendet.",
+      "invoice_info": "Monatliche Rechnung mit Zahlungsziel NET 30."
+    },
+    "invoices": {
+      "title": "Rechnungen",
+      "billing_history": "Rechnungsverlauf und Downloads",
+      "view_all": "Alle ansehen",
+      "no_invoices": "Noch keine Rechnungen",
+      "status": {
+        "paid": "Bezahlt",
+        "open": "Offen",
+        "pending": "Ausstehend",
+        "failed": "Fehlgeschlagen"
+      }
+    },
+    "tiers": {
+      "starter": "Starter",
+      "pro": "Pro",
+      "enterprise": "Enterprise"
+    }
+  },
+  "personal_profile": {
+    "title": "Persönliches Profil",
+    "description": "Verwalten Sie Ihre persönlichen Informationen und Einstellungen",
+    "photo": {
+      "title": "Profilfoto",
+      "description": "Dieses Foto wird in der gesamten Plattform angezeigt",
+      "no_designation": "Keine Bezeichnung festgelegt",
+      "change": "Foto ändern",
+      "upload": "Foto hochladen",
+      "remove": "Entfernen",
+      "success": "Profilfoto erfolgreich aktualisiert",
+      "failed": "Fehler beim Hochladen des Profilfotos",
+      "removed": "Profilfoto entfernt",
+      "remove_failed": "Fehler beim Entfernen des Profilfotos"
+    },
+    "security": {
+      "title": "Sicherheit",
+      "description": "Verwalten Sie Ihr Passwort",
+      "password": "Passwort",
+      "password_desc": "Ändern Sie Ihr Passwort, um Ihr Konto sicher zu halten",
+      "change": "Passwort ändern",
+      "dialog_title": "Passwort ändern",
+      "dialog_desc": "Geben Sie Ihr aktuelles Passwort ein und wählen Sie ein neues.",
+      "current_label": "Aktuelles Passwort",
+      "current_placeholder": "Geben Sie Ihr aktuelles Passwort ein",
+      "new_label": "Neues Passwort",
+      "new_placeholder": "Geben Sie Ihr neues Passwort ein",
+      "requirement_help": "Das Passwort muss mindestens 8 Zeichen lang sein und Kleinbuchstaben, Großbuchstaben, Zahlen und Symbole enthalten",
+      "confirm_label": "Neues Passwort bestätigen",
+      "confirm_placeholder": "Wiederholen Sie Ihr neues Passwort",
+      "update_button": "Passwort aktualisieren",
+      "success": "Passwort erfolgreich geändert",
+      "failed": "Fehler beim Ändern des Passworts"
+    },
+    "info": {
+      "title": "Persönliche Informationen",
+      "description": "Ihre grundlegenden Profildetails",
+      "full_name": "Vollständiger Name",
+      "full_name_placeholder": "Geben Sie Ihren vollständigen Namen ein",
+      "designation": "Bezeichnung",
+      "designation_placeholder": "z.B. Softwareentwickler"
+    },
+    "contact": {
+      "title": "Kontaktinformationen",
+      "description": "Wie andere Sie erreichen können",
+      "email": "E-Mail-Adresse",
+      "email_placeholder": "Geben Sie Ihre E-Mail-Adresse ein",
+      "logout_warning": "Das Ändern Ihrer E-Mail-Adresse loggt Sie aus dem System aus"
+    },
+    "changes": {
+      "unsaved": "Sie haben nicht gespeicherte Änderungen",
+      "discard": "Verwerfen",
+      "save": "Änderungen speichern",
+      "success": "Profil erfolgreich aktualisiert",
+      "failed": "Fehler beim Aktualisieren des Benutzers"
+    },
+    "crop": {
+      "title": "Profilfoto zuschneiden",
+      "description": "Passen Sie Ihr Foto mit Zoom, Drehung und Spiegelung an",
+      "drag_to_reposition": "Ziehen zum Positionieren",
+      "zoom": "Zoom",
+      "rotation": "Drehung",
+      "preview": "Vorschau",
+      "output": "Ausgabe: 400×400px",
+      "cancel": "Abbrechen",
+      "apply": "Anwenden",
+      "processing": "Wird verarbeitet...",
+      "reset": "Zurücksetzen"
+    },
+    "email_confirm": {
+      "title": "E-Mail-Änderung bestätigen",
+      "change_from": "Ihre E-Mail wird geändert von:",
+      "relogin_info": "Sie müssen sich mit Ihrer neuen E-Mail-Adresse erneut anmelden. Alle Ihre Daten und Einstellungen bleiben erhalten.",
+      "confirm_button": "Bestätigen & Abmelden"
+    }
+  },
+  "company_profile": {
+    "title": "Unternehmens-Einstellungen",
+    "description": "Verwalten Sie Ihre Unternehmensinformationen und Ihr Branding",
+    "admin_access": "Admin-Zugriff",
+    "logo": {
+      "title": "Unternehmenslogo",
+      "description": "Ihr Logo wird auf Ihrem Dashboard, in E-Mails und in von Thero generierten Dokumenten angezeigt.",
+      "no_logo": "Kein Logo hochgeladen",
+      "add_logo": "Unternehmenslogo hinzufügen",
+      "change": "Ändern",
+      "upload": "Hochladen",
+      "recommended": "Empfohlen: Quadratisches Bild, mindestens 400×400px. Unterstützt PNG, JPG oder SVG.",
+      "success": "Logo erfolgreich aktualisiert!",
+      "removed": "Logo erfolgreich entfernt!",
+      "failed_remove": "Fehler beim Entfernen des Logos",
+      "failed_upload": "Fehler beim Hochladen des Logos"
+    },
+    "basic": {
+      "title": "Basisinformationen",
+      "description": "Wesentliche Details zu Ihrer Organisation",
+      "registered_name": "Eingetragener Name",
+      "name_placeholder": "Geben Sie den eingetragenen Namen Ihres Unternehmens ein",
+      "required": "Erforderlich",
+      "legal_info": "Der rechtliche Name, unter dem das Unternehmen eingetragen wurde",
+      "display_name": "Anzeigename",
+      "display_placeholder": "Kurzname für die Anzeige",
+      "display_info": "Der Name des Unternehmens, der in Thero angezeigt werden soll",
+      "contact_email": "Kontakt-E-Mail"
+    },
+    "address": {
+      "title": "Adressinformationen",
+      "description": "Der physische Standort Ihres Unternehmens",
+      "street": "Straße und Hausnummer",
+      "street_placeholder": "Beginnen Sie mit der Adresseingabe für Vorschläge...",
+      "city": "Stadt",
+      "city_placeholder": "Stadt eingeben",
+      "state": "Bundesland/Kanton",
+      "state_placeholder": "Bundesland oder Kanton eingeben",
+      "zip": "Postleitzahl",
+      "zip_placeholder": "Postleitzahl eingeben",
+      "country": "Land",
+      "country_placeholder": "Land auswählen"
+    },
+    "save": {
+      "saving": "Änderungen werden gespeichert...",
+      "button": "Änderungen speichern",
+      "failed": "Fehler beim Aktualisieren der Organisation"
+    },
+    "crop": {
+      "title": "Logo zuschneiden",
+      "description": "Ziehen Sie das Logo an die gewünschte Position, verwenden Sie den Schieberegler zum Ein- oder Auszoomen"
+    }
+  },
+  "users_groups": {
+    "title": "Benutzer & Gruppen",
+    "description": "Verwalten Sie Teammitglieder und organisieren Sie diese in Gruppen für eine einfachere Berechtigungsverwaltung.",
+    "no_licenses": "Keine Lizenzen verfügbar",
+    "licenses_available": "{{count}} Lizenzen verfügbar",
+    "manage_settings": "Einstellungen verwalten",
+    "users": "Benutzer",
+    "groups": "Gruppen",
+    "pending_invites": "Ausstehende Einladungen",
+    "loading": "Laden...",
+    "add_user": {
+      "invite_team": "Teammitglieder einladen",
+      "invite_desc": "Senden Sie E-Mail-Einladungen, um neue Mitglieder zu Ihrem Team hinzuzufügen.",
+      "no_licenses_warning": "Keine Lizenzen verfügbar. Erhöhen Sie Ihre Platzzuteilung, bevor Sie Einladungen versenden.",
+      "email_addresses": "E-Mail-Adressen",
+      "email_placeholder": "name@unternehmen.de",
+      "add_another_email": "Weitere E-Mail hinzufügen...",
+      "add": "Hinzufügen",
+      "emails_added": "{{count}} E-Mail hinzugefügt",
+      "emails_added_plural": "{{count}} E-Mails hinzugefügt",
+      "add_to_groups": "Zu Gruppen hinzufügen (optional)",
+      "select_groups": "Gruppen auswählen...",
+      "permissions_inherit_info": "Neue Mitglieder erben die Berechtigungen der ausgewählten Gruppen.",
+      "cancel": "Abbrechen",
+      "sending": "Wird gesendet...",
+      "send_invite": "Einladung senden",
+      "send_invites": "Einladungen senden",
+      "no_free_licenses": "Keine freien Lizenzen verfügbar",
+      "add_at_least_one_email": "Bitte fügen Sie mindestens eine E-Mail-Adresse hinzu",
+      "invites_sent": "{{count}} Einladung gesendet",
+      "invites_sent_plural": "{{count}} Einladungen gesendet",
+      "failed_send_invites": "Einladungen konnten nicht gesendet werden",
+      "email_already_added": "Diese E-Mail wurde bereits hinzugefügt",
+      "valid_email_error": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+    },
+    "edit_group": {
+      "title": "Gruppen-Einstellungen",
+      "manage_for": "Einstellungen verwalten für",
+      "coming_soon": "Die Verwaltung von Gruppeneinstellungen und Berechtigungen ist bald verfügbar. Sie werden in der Lage sein, Zugriffskontrollen zu konfigurieren, Gruppen umzubenennen und erweiterte Einstellungen zu verwalten.",
+      "close": "Schließen"
+    }
+  }
+}

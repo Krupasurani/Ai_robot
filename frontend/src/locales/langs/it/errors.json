@@ -1,0 +1,25 @@
+{
+  "network": {
+    "general": "Impossibile connettersi al server. Controlla la tua connessione a internet.",
+    "timeout": "La richiesta ha impiegato troppo tempo. Riprova."
+  },
+  "auth": {
+    "general": "Autenticazione non riuscita. Accedi di nuovo."
+  },
+  "validation": {
+    "general": "Dati inseriti non validi. Controlla le informazioni e riprova."
+  },
+  "generic": {
+    "server": "Si è verificato un errore sul server. Riprova più tardi.",
+    "not_found": "La risorsa richiesta non è stata trovata.",
+    "unknown": "Si è verificato un errore. Riprova più tardi."
+  },
+  "backend": {
+    "UNKNOWN": "Si è verificato un errore imprevisto. Riprova più tardi."
+  }
+}
+
+
+
+
+

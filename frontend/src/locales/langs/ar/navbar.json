@@ -1,0 +1,144 @@
+{
+  "app": "تطبيق",
+  "job": "وظيفة",
+  "user": "مستخدم",
+  "travel": "السفر",
+  "invoice": "فاتورة",
+  "blog": {
+    "title": "مدونة",
+    "caption": "اختصارات لوحة المفاتيح المخصصة."
+  },
+  "subheader": "العنوان الفرعي",
+  "navigation": {
+    "overview": "نظرة عامة",
+    "assistant": "المساعد",
+    "agents": "الوكلاء",
+    "knowledgeBase": "قاعدة المعرفة",
+    "knowledgeSearch": "البحث في المعرفة",
+    "promptLibrary": "مكتبة البرومبت",
+    "canvas": "كانفاس",
+    "projects": "المشاريع",
+    "administration": "الإدارة",
+    "settings": "الإعدادات",
+    "connectorSettings": "إعدادات الموصل",
+    "myProfile": "ملفي الشخصي",
+    "companyProfile": "ملف الشركة",
+    "company": "الشركة",
+    "authentication": "المصادقة",
+    "connectors": "الموصلات",
+    "services": "الخدمات",
+    "preferences": "التفضيلات",
+    "platformSettings": "إعدادات المنصة",
+    "sessionManagement": "إدارة الجلسة",
+    "personalProfile": "الملف الشخصي",
+    "licenseBilling": "الترخيص والفوترة"
+  },
+  "welcome": {
+    "title": "ذكاء اصطناعي لمكان العمل يفهم مكان عملك من الداخل",
+    "placeholder": "اسأل أي شيء..."
+  },
+  "knowledgeBases": {
+    "title": "قواعد المعرفة",
+    "description": "اجمع وأدر جميع مصادر المعرفة لعملائك.",
+    "countLabel": "{{count}} قاعدة معرفة",
+    "countLabelPlural": "{{count}} قواعد المعرفة"
+  },
+  "knowledgeBase": {
+    "aiAssistant": "المساعد الذكي",
+    "askQuestionsAboutDocument": "اطرح أسئلة حول هذا المستند"
+  },
+  "pages": {
+    "sessionManagement": {
+      "title": "إدارة الجلسة",
+      "description": "إدارة جلساتك النشطة وتسجيل الخروج من الأجهزة الأخرى."
+    },
+    "personalProfile": {
+      "title": "الملف الشخصي"
+    },
+    "applicationPreferences": {
+      "title": "تفضيلات التطبيق",
+      "description": "قم بتكوين خيارات اللغة وواجهة المستخدم للحصول على تجربة أفضل في مؤسستك."
+    },
+    "companyProfile": {
+      "title": "ملف الشركة",
+      "logo": "شعار الشركة",
+      "logoDescription": "سيظهر شعارك على لوحة تحكم حسابك والبريد الإلكتروني والمستندات المُنشأة من Thero."
+    },
+    "connectorSettings": {
+      "title": "إعدادات الموصل",
+      "subtitle": "التكاملات",
+      "description": "إدارة التكاملات مع أدوات SaaS ومراقبة حالة المزامنة الخاصة بها."
+    }
+  },
+  "chat": {
+    "newChat": "دردشة جديدة",
+    "creating": "جاري الإنشاء...",
+    "today": "اليوم",
+    "yesterday": "أمس",
+    "previous7Days": "الأيام السبعة الماضية",
+    "previous30Days": "الأيام الثلاثون الماضية",
+    "older": "أقدم",
+    "projectHome": "الصفحة الرئيسية للمشروع",
+    "projectPlaceholder": "دردشة جديدة في {{projectTitle}}"
+  },
+  "chatInput": {
+    "buttons": {
+      "insertPromptFromLibrary": "Insert prompt from library",
+      "toggleReasoning": "Reasoning",
+      "enableReasoning": "Reasoning",
+      "disableReasoning": "Reasoning",
+      "toggleWebSearch": "Web search",
+      "enableWebSearch": "Web search",
+      "disableWebSearch": "Web search",
+      "attachFile": "Attach file",
+      "startDictation": "Dictation",
+      "stopRecording": "Stop dictation",
+      "speechNotSupported": "Speech recognition not supported by this browser"
+    },
+    "modelTypes": {
+      "agent": "Agent",
+      "knowledge": "Knowledge",
+      "chat": "Chat",
+      "search": "Search",
+      "deepResearch": "Deep Research",
+      "image": "Image"
+    },
+    "filterSources": "Filter Sources",
+    "selectAppsAndKnowledgeBases": "Select apps and knowledge bases",
+    "context": "Context:",
+    "filter": "Filter:",
+    "attachedFiles": "Attached files",
+    "dropFilesHere": "Drop files here",
+    "searchMentions": "Search or enter @name...",
+    "all": "All",
+    "kb": "KB",
+    "projects": "Projects",
+    "files": "Files",
+    "apps": "Apps",
+    "users": "Users",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "uploading": "Uploading...",
+    "processing": "Processing...",
+    "completed": "Completed",
+    "error": "Error",
+    "promptLibrary": "Prompt Library",
+    "browseSavedPrompts": "Browse saved prompts and insert them into this chat without leaving the page.",
+    "noPromptsAvailable": "No prompts available yet.",
+    "searchPrompts": "Search prompts",
+    "usePrompt": "Use",
+    "openFullPromptLibrary": "Open full prompt library",
+    "webSearchActive": "Web search active",
+    "reasoningActive": "Reasoning active",
+    "agentLoadError": "Unable to load agents right now.",
+    "selectAgentTooltip": "Select an agent to start chatting",
+    "agentSelectedTooltip": "Chatting with {{agentName}}",
+    "selectAgentPlaceholder": "Select agent",
+    "loadingAgents": "Loading agents...",
+    "noAgentsFound": "No agents available yet",
+    "agentFallbackName": "Agent",
+    "agentRequired": "Please select an agent before sending.",
+    "quickModeActivate": "تفعيل الوضع السريع",
+    "quickModeDeactivate": "إلغاء تفعيل الوضع السريع"
+  }
+}

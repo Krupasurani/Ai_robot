@@ -1,0 +1,43 @@
+# =============================================================================
+# Thero AI - Indexing Service Dependencies
+# =============================================================================
+# Document processing, embedding generation, and Kafka consumer.
+# Install with: pip install -r requirements/indexing.txt
+# =============================================================================
+
+-r base.txt
+
+# LangChain Stack (for embeddings)
+langchain==0.3.19
+langchain-core>=0.3.35,<1.0.0
+langchain-community==0.3.18
+langchain-experimental==0.3.4
+langchain-huggingface>=0.1.0
+langchain-qdrant==0.2.0
+
+# Vector Database
+qdrant-client==1.13.1
+fastembed==0.5.1
+
+# ML & Embeddings
+sentence-transformers==3.4.1
+transformers>=4.40.0
+torch>=2.0.0
+
+# NLP
+spacy<=3.7.5
+
+# Document Processing
+docling==2.60.0
+openpyxl==3.1.5
+PyMuPDF==1.24.14
+ocrmypdf==16.8.0
+Pillow>=9.0.0
+CairoSVG==2.8.2
+
+# Data Processing
+numpy<2
+pandas==2.2.3
+beautifulsoup4==4.12.3
+html-to-markdown==2.3.0
+markdown==3.8

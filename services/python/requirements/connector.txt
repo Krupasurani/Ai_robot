@@ -1,0 +1,34 @@
+# =============================================================================
+# Thero AI - Connector Service Dependencies
+# =============================================================================
+# OAuth flows, sync jobs, and entity management.
+# Install with: pip install -r requirements/connector.txt
+# =============================================================================
+
+-r base.txt
+
+# Google APIs
+google-api-python-client==2.161.0
+google-auth-oauthlib==1.2.1
+
+# Microsoft Graph
+msgraph-sdk==1.16.0
+
+# Cloud Storage
+dropbox==12.0.2
+box-sdk-gen==1.12.0
+aioboto3>=12.0.0
+aiobotocore
+
+# Collaboration Tools
+slack-sdk==3.27.0
+notion-client==2.2.1
+linkedin-api-client>=0.3.0
+
+# Issue Trackers
+PyGithub==2.8.1
+python-gitlab==6.4.0
+
+# Other Connectors
+evernote3>=1.25.14
+thrift>=0.16.0

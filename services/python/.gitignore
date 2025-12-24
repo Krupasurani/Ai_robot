@@ -1,0 +1,30 @@
+# Python project specific ignores
+# (Root .gitignore covers most Python patterns)
+
+# Data directories
+data/*
+!data/.gitkeep
+
+# Configuration files (keep templates)
+default_config.json
+default_config*.json
+
+# Test and development files
+to_do.txt
+tests/*
+google_test
+
+# Credentials
+credentials.json
+token.pickle
+
+# Celery schedule files
+celerybeat-schedule.*
+celerybeat.pid
+
+# Logs
+logs/
+*.log
+
+# Version files (if any)
+3.0.0

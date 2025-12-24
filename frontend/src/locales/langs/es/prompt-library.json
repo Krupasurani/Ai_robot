@@ -1,0 +1,165 @@
+{
+  "page": {
+    "title": "Biblioteca de prompts",
+    "subtitle": "Guarda, perfecciona y reutiliza tus mejores prompts",
+    "description": "Organiza plantillas privadas, comparte instrucciones listas para el espacio de trabajo e intégralas en cualquier chat en segundos."
+  },
+  "header": {
+    "refresh": "Actualizar",
+    "newPrompt": "Nuevo prompt"
+  },
+  "filters": {
+    "searchPlaceholder": "Buscar por título, descripción o contenido",
+    "scope": {
+      "all": "Todos",
+      "private": "Privado",
+      "shared": "Compartido"
+    },
+    "categoryPlaceholder": "Categoría",
+    "allCategories": "Todas las categorías",
+    "tagsPlaceholder": "Etiquetas",
+    "allTags": "Todas las etiquetas",
+    "sortPlaceholder": "Ordenar",
+    "recentlyUpdated": "Actualizado recientemente",
+    "alphabetical": "A → Z",
+    "reset": "Restablecer"
+  },
+  "prompts": {
+    "title": "Prompts",
+    "count": "{{count}} plantillas • alcance: {{scope}}",
+    "updating": "Actualizando…",
+    "empty": {
+      "title": "Aún no hay prompts",
+      "description": "Guarda tus instrucciones favoritas una vez y reutilízalas en todos los chats.",
+      "createButton": "Crea tu primer prompt"
+    },
+    "categories": {
+      "uncategorized": "Sin categorizar"
+    },
+    "visibility": {
+      "private": "Privado",
+      "shared": "Compartido"
+    },
+    "noTags": "+{{count}}"
+  },
+  "details": {
+    "selectPrompt": "Selecciona un prompt para previsualizar",
+    "selectPromptDescription": "Elige una plantilla de la lista para inspeccionar detalles, copiar y compartir.",
+    "title": "Contenido del prompt",
+    "useInChat": "Usar en chat",
+    "edit": "Editar",
+    "lastUpdated": "Última actualización"
+  },
+  "actions": {
+    "edit": "Editar",
+    "duplicate": "Duplicar",
+    "makePrivate": "Hacer privado",
+    "shareToWorkspace": "Compartir con el espacio de trabajo",
+    "shareWithUsers": "Compartir con usuarios",
+    "delete": "Eliminar"
+  },
+  "dialog": {
+    "createTitle": "Crear plantilla de prompt",
+    "editTitle": "Editar plantilla de prompt",
+    "description": "Mantén los prompts estructurados y reutilizables. Agrega etiquetas, elige una plantilla o deja que la IA cree una versión para ti.",
+    "quickTemplates": "Plantillas rápidas",
+    "titleLabel": "Título",
+    "titlePlaceholder": "ej. Prompt de retrospectiva de lanzamiento de producto",
+    "visibilityLabel": "Visibilidad",
+    "visibilityOptions": {
+      "private": "Privado",
+      "users": "Compartir con usuarios",
+      "workspace": "Compartir con el espacio de trabajo"
+    },
+    "descriptionLabel": "Descripción",
+    "descriptionPlaceholder": "Explica qué debe hacer este prompt.",
+    "contentLabel": "Instrucciones del prompt",
+    "contentPlaceholder": "Ingresa las instrucciones completas que deseas reutilizar…",
+    "categoryLabel": "Categoría",
+    "categoryPlaceholder": "ej. investigación, ingeniería, ventas",
+    "tagsLabel": "Etiquetas",
+    "tagsPlaceholder": "Agregar etiqueta y presionar Enter",
+    "addTag": "Agregar",
+    "removeTag": "Eliminar etiqueta {{tag}}",
+    "guides": {
+      "title": "Guías y mejores prácticas",
+      "item1": "Describe el rol, tono, formato de salida y restricciones.",
+      "item2": "Lista pasos concretos o listas de verificación a seguir.",
+      "item3": "Comparte como espacio de trabajo cuando el prompt esté revisado y estable."
+    },
+    "aiAssist": "Asistencia IA",
+    "refining": "Refinando…",
+    "create": "Crear prompt",
+    "saveChanges": "Guardar cambios"
+  },
+  "shareDialog": {
+    "title": "Compartir prompt {{title}}",
+    "selectTeamMembers": "Selecciona miembros del equipo",
+    "searchPlaceholder": "Buscar usuarios por nombre o correo electrónico...",
+    "noUsersFound": "No se encontraron usuarios.",
+    "inviteByEmail": "Invitar por correo electrónico",
+    "invitePlaceholder": "name1@company.com, name2@company.com",
+    "inviteHelper": "Usa coma o espacio para separar varios correos electrónicos.",
+    "currentMembers": "Miembros actuales",
+    "noMembers": "Sin miembros todavía.",
+    "loading": "Cargando…",
+    "ownerLabel": "Propietario",
+    "roleRead": "Lectura",
+    "roleWrite": "Escritura",
+    "shareButton": "Compartir / Invitar",
+    "closeButton": "Cerrar",
+    "successAddUsers": "Usuarios agregados al prompt",
+    "successInvites": "Invitaciones enviadas",
+    "successRoleUpdate": "Rol actualizado",
+    "successRemove": "Miembro eliminado",
+    "errorShare": "No se pudieron completar los recursos compartidos/invitaciones",
+    "errorRole": "Error al actualizar el rol",
+    "errorRemove": "Error al eliminar miembro",
+    "errorNoSelection": "Por favor selecciona usuarios o ingresa correos electrónicos"
+  },
+  "templates": {
+    "executiveSummary": {
+      "label": "Resumen ejecutivo",
+      "helper": "Convierte contenido extenso en actualizaciones de estado concisas.",
+      "title": "Generador de Resumen Ejecutivo",
+      "description": "Resume documentos largos en actualizaciones ejecutivas concisas."
+    },
+    "brainstorm": {
+      "label": "Lluvia de ideas creativa",
+      "helper": "Prompts de pensamiento divergente para ideación.",
+      "title": "Prompt de Ideación Divergente",
+      "description": "Genera ideas poco convencionales pero prácticas."
+    },
+    "codeReview": {
+      "label": "Ayudante de revisión de código",
+      "helper": "Lista de verificación estructurada para revisar PRs.",
+      "title": "Lista de Verificación de Revisión de Código",
+      "description": "Detecta regresiones y mejora la legibilidad durante las revisiones."
+    }
+  },
+  "deleteDialog": {
+    "title": "¿Eliminar prompt?",
+    "description": "Esta acción no se puede deshacer. El prompt {{title}} será removido de tu biblioteca.",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "deleting": "Eliminando…"
+  },
+  "toast": {
+    "saved": "Prompt guardado en tu biblioteca.",
+    "updated": "Prompt actualizado.",
+    "deleted": "Prompt eliminado.",
+    "duplicated": "Prompt duplicado.",
+    "shared": "Prompt compartido con el espacio de trabajo.",
+    "madePrivate": "Prompt establecido como privado.",
+    "copied": "Prompt copiado. Cambia al chat para pegarlo.",
+    "copyFailed": "No se pudo copiar el prompt.",
+    "duplicateFailed": "No se pudo duplicar el prompt.",
+    "saveFailed": "Error al guardar el prompt.",
+    "deleteFailed": "No se pudo eliminar el prompt.",
+    "visibilityFailed": "Error al actualizar la visibilidad.",
+    "loadFailed": "Error al cargar los prompts",
+    "assistDrafted": "El asistente creó un borrador de plantilla de prompt.",
+    "assistFailed": "El asistente no pudo generar un prompt en este momento.",
+    "titleRequired": "Por favor proporciona un título y contenido del prompt."
+  }
+}

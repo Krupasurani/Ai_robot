@@ -1,0 +1,165 @@
+{
+  "page": {
+    "title": "Thư viện prompt",
+    "subtitle": "Lưu, tinh chỉnh và tái sử dụng các prompt tốt nhất của bạn",
+    "description": "Tổ chức các mẫu riêng tư, chia sẻ hướng dẫn sẵn sàng cho không gian làm việc và thả chúng vào bất kỳ cuộc trò chuyện nào trong vài giây."
+  },
+  "header": {
+    "refresh": "Làm mới",
+    "newPrompt": "Prompt mới"
+  },
+  "filters": {
+    "searchPlaceholder": "Tìm kiếm theo tiêu đề, mô tả hoặc nội dung",
+    "scope": {
+      "all": "Tất cả",
+      "private": "Riêng tư",
+      "shared": "Đã chia sẻ"
+    },
+    "categoryPlaceholder": "Danh mục",
+    "allCategories": "Tất cả danh mục",
+    "tagsPlaceholder": "Thẻ",
+    "allTags": "Tất cả thẻ",
+    "sortPlaceholder": "Sắp xếp",
+    "recentlyUpdated": "Cập nhật gần đây",
+    "alphabetical": "A → Z",
+    "reset": "Đặt lại"
+  },
+  "prompts": {
+    "title": "Prompt",
+    "count": "{{count}} mẫu • phạm vi: {{scope}}",
+    "updating": "Đang cập nhật…",
+    "empty": {
+      "title": "Chưa có prompt nào",
+      "description": "Lưu hướng dẫn yêu thích của bạn một lần và tái sử dụng trong tất cả cuộc trò chuyện.",
+      "createButton": "Tạo prompt đầu tiên của bạn"
+    },
+    "categories": {
+      "uncategorized": "Chưa phân loại"
+    },
+    "visibility": {
+      "private": "Riêng tư",
+      "shared": "Đã chia sẻ"
+    },
+    "noTags": "+{{count}}"
+  },
+  "details": {
+    "selectPrompt": "Chọn prompt để xem trước",
+    "selectPromptDescription": "Chọn một mẫu từ danh sách để kiểm tra chi tiết, sao chép và chia sẻ.",
+    "title": "Nội dung prompt",
+    "useInChat": "Sử dụng trong trò chuyện",
+    "edit": "Chỉnh sửa",
+    "lastUpdated": "Cập nhật lần cuối"
+  },
+  "actions": {
+    "edit": "Chỉnh sửa",
+    "duplicate": "Nhân bản",
+    "makePrivate": "Đặt riêng tư",
+    "shareToWorkspace": "Chia sẻ với không gian làm việc",
+    "shareWithUsers": "Chia sẻ với người dùng",
+    "delete": "Xóa"
+  },
+  "dialog": {
+    "createTitle": "Tạo mẫu prompt",
+    "editTitle": "Chỉnh sửa mẫu prompt",
+    "description": "Giữ cho prompt có cấu trúc và có thể tái sử dụng. Thêm thẻ, chọn mẫu hoặc để AI soạn thảo phiên bản cho bạn.",
+    "quickTemplates": "Mẫu nhanh",
+    "titleLabel": "Tiêu đề",
+    "titlePlaceholder": "vd: Prompt tổng kết phát hành sản phẩm",
+    "visibilityLabel": "Khả năng hiển thị",
+    "visibilityOptions": {
+      "private": "Riêng tư",
+      "users": "Chia sẻ với người dùng",
+      "workspace": "Chia sẻ với không gian làm việc"
+    },
+    "descriptionLabel": "Mô tả",
+    "descriptionPlaceholder": "Giải thích prompt này nên làm gì.",
+    "contentLabel": "Hướng dẫn prompt",
+    "contentPlaceholder": "Nhập hướng dẫn đầy đủ bạn muốn tái sử dụng…",
+    "categoryLabel": "Danh mục",
+    "categoryPlaceholder": "vd: nghiên cứu, kỹ thuật, bán hàng",
+    "tagsLabel": "Thẻ",
+    "tagsPlaceholder": "Thêm thẻ và nhấn Enter",
+    "addTag": "Thêm",
+    "removeTag": "Xóa thẻ {{tag}}",
+    "guides": {
+      "title": "Hướng dẫn và thực tiễn tốt nhất",
+      "item1": "Mô tả vai trò, giọng điệu, định dạng đầu ra và ràng buộc.",
+      "item2": "Liệt kê các bước cụ thể hoặc danh sách kiểm tra để làm theo.",
+      "item3": "Chia sẻ như không gian làm việc khi prompt đã được xem xét và ổn định."
+    },
+    "aiAssist": "Hỗ trợ AI",
+    "refining": "Đang tinh chỉnh…",
+    "create": "Tạo prompt",
+    "saveChanges": "Lưu thay đổi"
+  },
+  "shareDialog": {
+    "title": "Chia sẻ prompt {{title}}",
+    "selectTeamMembers": "Chọn thành viên nhóm",
+    "searchPlaceholder": "Tìm kiếm người dùng theo tên hoặc email...",
+    "noUsersFound": "Không tìm thấy người dùng.",
+    "inviteByEmail": "Mời qua email",
+    "invitePlaceholder": "name1@company.com, name2@company.com",
+    "inviteHelper": "Sử dụng dấu phẩy hoặc khoảng trắng để phân tách nhiều email.",
+    "currentMembers": "Thành viên hiện tại",
+    "noMembers": "Chưa có thành viên.",
+    "loading": "Đang tải…",
+    "ownerLabel": "Chủ sở hữu",
+    "roleRead": "Đọc",
+    "roleWrite": "Ghi",
+    "shareButton": "Chia sẻ / Mời",
+    "closeButton": "Đóng",
+    "successAddUsers": "Người dùng đã được thêm vào prompt",
+    "successInvites": "Lời mời đã được gửi",
+    "successRoleUpdate": "Vai trò đã được cập nhật",
+    "successRemove": "Thành viên đã bị xóa",
+    "errorShare": "Không thể hoàn thành chia sẻ/mời",
+    "errorRole": "Không thể cập nhật vai trò",
+    "errorRemove": "Không thể xóa thành viên",
+    "errorNoSelection": "Vui lòng chọn người dùng hoặc nhập email"
+  },
+  "templates": {
+    "executiveSummary": {
+      "label": "Tóm tắt điều hành",
+      "helper": "Chuyển đổi nội dung dài thành cập nhật trạng thái ngắn gọn.",
+      "title": "Trình tạo tóm tắt điều hành",
+      "description": "Tóm tắt tài liệu dài thành cập nhật điều hành ngắn gọn."
+    },
+    "brainstorm": {
+      "label": "Brainstorm ý tưởng sáng tạo",
+      "helper": "Prompt suy nghĩ phân kỳ cho việc tạo ý tưởng.",
+      "title": "Prompt tạo ý tưởng phân kỳ",
+      "description": "Tạo ra ý tưởng không theo quy ước nhưng thực tế."
+    },
+    "codeReview": {
+      "label": "Trợ lý đánh giá mã",
+      "helper": "Danh sách kiểm tra có cấu trúc để đánh giá PR.",
+      "title": "Danh sách kiểm tra đánh giá mã",
+      "description": "Phát hiện hồi quy và cải thiện khả năng đọc trong quá trình đánh giá."
+    }
+  },
+  "deleteDialog": {
+    "title": "Xóa prompt?",
+    "description": "Hành động này không thể hoàn tác. Prompt {{title}} sẽ bị xóa khỏi thư viện của bạn.",
+    "cancel": "Hủy",
+    "delete": "Xóa",
+    "deleting": "Đang xóa…"
+  },
+  "toast": {
+    "saved": "Prompt đã được lưu vào thư viện của bạn.",
+    "updated": "Prompt đã được cập nhật.",
+    "deleted": "Prompt đã bị xóa.",
+    "duplicated": "Prompt đã được nhân bản.",
+    "shared": "Prompt đã được chia sẻ với không gian làm việc.",
+    "madePrivate": "Prompt đã được đặt riêng tư.",
+    "copied": "Prompt đã được sao chép. Chuyển sang trò chuyện để dán.",
+    "copyFailed": "Không thể sao chép prompt.",
+    "duplicateFailed": "Không thể nhân bản prompt.",
+    "saveFailed": "Lưu prompt thất bại.",
+    "deleteFailed": "Không thể xóa prompt.",
+    "visibilityFailed": "Cập nhật khả năng hiển thị thất bại.",
+    "loadFailed": "Tải prompt thất bại",
+    "assistDrafted": "Trợ lý đã soạn thảo mẫu prompt.",
+    "assistFailed": "Trợ lý không thể tạo prompt vào lúc này.",
+    "titleRequired": "Vui lòng cung cấp tiêu đề và nội dung prompt."
+  }
+}

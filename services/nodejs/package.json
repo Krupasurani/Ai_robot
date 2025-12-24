@@ -1,0 +1,17 @@
+{
+  "name": "nodejs-services",
+  "version": "1.0.0",
+  "description": "Root package.json for nodejs services",
+  "private": true,
+  "workspaces": [
+    "apps"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=apps",
+    "build": "npm run build --workspace=apps",
+    "start": "npm start --workspace=apps",
+    "lint": "npm run lint --workspace=apps",
+    "format": "npm run format --workspace=apps"
+  }
+}
+

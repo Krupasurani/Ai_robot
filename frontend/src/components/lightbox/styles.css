@@ -1,0 +1,44 @@
+@import 'yet-another-react-lightbox/styles.css';
+@import 'yet-another-react-lightbox/plugins/captions.css';
+@import 'yet-another-react-lightbox/plugins/thumbnails.css';
+
+.yarl__root {
+  --yarl__thumbnails_thumbnail_padding: 0;
+  --yarl__thumbnails_thumbnail_border: transparent;
+  --yarl__color_backdrop: hsl(var(--background) / 0.9);
+  --yarl__slide_captions_container_background: hsl(var(--foreground) / 0.32);
+}
+
+.yarl__slide_title {
+  @apply text-xl font-semibold;
+}
+
+.yarl__slide_description {
+  @apply text-sm;
+}
+
+.yarl__button {
+  filter: unset;
+  @apply text-foreground;
+}
+
+.yarl__button:hover {
+  @apply text-foreground/80;
+}
+
+.yarl__thumbnails_thumbnail {
+  @apply opacity-50 rounded-lg border-transparent;
+}
+
+.yarl__thumbnails_thumbnail_active {
+  @apply opacity-100;
+  border-color: hsl(var(--primary));
+}
+
+.yarl__thumbnails_vignette {
+  --yarl__thumbnails_vignette_size: 0;
+}
+
+.yarl__video_container {
+  @apply bg-background;
+}

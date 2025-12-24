@@ -1,0 +1,23 @@
+{
+  "delete": {
+    "title": "Confirm Delete",
+    "cannot_be_undone": "This action cannot be undone",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "deleting": "Deleting..."
+  },
+  "kb": {
+    "create": {
+      "title": "Create Knowledge Base",
+      "description": "Create a new knowledge base to organize and store your documents, information, and data for AI-powered search and retrieval.",
+      "name_label": "Knowledge Base name",
+      "name_placeholder": "Enter knowledge base name...",
+      "desc_label": "Description",
+      "desc_placeholder": "How will this Knowledge Base be used?",
+      "optional": "optional",
+      "cancel": "Cancel",
+      "create": "Create Knowledge Base",
+      "creating": "Creating..."
+    }
+  }
+}

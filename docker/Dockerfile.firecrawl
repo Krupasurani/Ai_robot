@@ -1,0 +1,46 @@
+# =============================================================================
+# Firecrawl - Web Scraping Service
+# =============================================================================
+# Builds Firecrawl from official GitHub repository.
+# Uses Debian for better native module compilation support.
+#
+# Build:  docker build -f docker/Dockerfile.firecrawl -t firecrawl-api .
+# =============================================================================
+
+FROM node:20-bookworm
+
+WORKDIR /firecrawl
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git curl python3 python3-pip build-essential cmake \
+    libpq-dev postgresql-client ca-certificates \
+    && rm -rf /var/lib/apt/lists/* \
+    && npm install -g pnpm@latest
+
+# Install Go 1.23
+ARG GO_VERSION=1.23.4
+RUN curl -fsSL "https://go.dev/dl/go${GO_VERSION}.linux-$(dpkg --print-architecture).tar.gz" | tar -C /usr/local -xzf -
+ENV PATH="/usr/local/go/bin:${PATH}"
+
+# Install Rust for native bindings
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+ENV PATH="/root/.cargo/bin:${PATH}"
+
+# Clone and install
+RUN git clone --depth 1 https://github.com/mendableai/firecrawl.git . && \
+    cd apps/api && \
+    pnpm install --frozen-lockfile
+
+# Build Go library
+RUN cd apps/api/sharedLibs/go-html-to-md && \
+    go mod tidy && \
+    go build -buildmode=c-shared -o ../../dist/go-html-to-md.so .
+
+WORKDIR /firecrawl/apps/api
+
+RUN cp .env.example .env || true
+
+EXPOSE 3002
+
+CMD ["pnpm", "start"]

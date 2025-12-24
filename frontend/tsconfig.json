@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/lib/*": ["src/lib/*"],
+      "@/lib/utils": ["src/lib/utils.ts"]
+    },
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "strict": true,
+    "noEmit": true,
+    "allowJs": true,
+    "module": "ESNext",
+
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "bundler",
+    "noFallthroughCasesInSwitch": true,
+    "useUnknownInCatchVariables": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src", "src/lib"],
+  "exclude": [
+    "node_modules",
+    "src/components/nav-basic/**/*",
+    "src/components/mega-menu/**/*",
+    "src/components/walktour/**/*",
+    "src/components/orbiting-circles/**/*",
+    "src/components/platform-orbits/**/*",
+    "src/components/organizational-chart/**/*"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "network": {
+    "general": "No se puede conectar con el servidor. Comprueba tu conexión a internet.",
+    "timeout": "La solicitud ha tardado demasiado. Inténtalo de nuevo."
+  },
+  "auth": {
+    "general": "La autenticación ha fallado. Inicia sesión de nuevo."
+  },
+  "validation": {
+    "general": "Datos de entrada no válidos. Revisa la información e inténtalo de nuevo."
+  },
+  "generic": {
+    "server": "El servidor ha encontrado un error. Inténtalo de nuevo más tarde.",
+    "not_found": "El recurso solicitado no se ha encontrado.",
+    "unknown": "Se ha producido un error. Inténtalo de nuevo más tarde."
+  },
+  "backend": {
+    "UNKNOWN": "Se ha producido un error inesperado. Inténtalo de nuevo más tarde."
+  }
+}
+
+
+
+
+

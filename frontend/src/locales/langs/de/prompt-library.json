@@ -1,0 +1,165 @@
+{
+  "page": {
+    "title": "Prompt-Bibliothek",
+    "subtitle": "Speichere, verfeinere und wiederverwende deine besten Prompts",
+    "description": "Organisiere private Vorlagen, teile arbeitsbereite Anweisungen und füge sie in Sekunden in jeden Chat ein."
+  },
+  "header": {
+    "refresh": "Aktualisieren",
+    "newPrompt": "Neuer Prompt"
+  },
+  "filters": {
+    "searchPlaceholder": "Nach Titel, Beschreibung oder Inhalt suchen",
+    "scope": {
+      "all": "Alle",
+      "private": "Privat",
+      "shared": "Geteilt"
+    },
+    "categoryPlaceholder": "Kategorie",
+    "allCategories": "Alle Kategorien",
+    "tagsPlaceholder": "Tags",
+    "allTags": "Alle Tags",
+    "sortPlaceholder": "Sortieren",
+    "recentlyUpdated": "Kürzlich aktualisiert",
+    "alphabetical": "A → Z",
+    "reset": "Zurücksetzen"
+  },
+  "prompts": {
+    "title": "Prompts",
+    "count": "{{count}} Vorlagen • Bereich: {{scope}}",
+    "updating": "Aktualisierung läuft…",
+    "empty": {
+      "title": "Noch keine Prompts",
+      "description": "Speichere deine Standard-Anweisungen einmal und verwende sie in allen Chats wieder.",
+      "createButton": "Erstelle deinen ersten Prompt"
+    },
+    "categories": {
+      "uncategorized": "Unkategorisiert"
+    },
+    "visibility": {
+      "private": "Privat",
+      "shared": "Geteilt"
+    },
+    "noTags": "+{{count}}"
+  },
+  "details": {
+    "selectPrompt": "Wähle einen Prompt zur Vorschau aus",
+    "selectPromptDescription": "Wähle eine Vorlage aus der Liste aus, um Details zu überprüfen, zu kopieren und zu teilen.",
+    "title": "Prompt-Inhalt",
+    "useInChat": "Im Chat verwenden",
+    "edit": "Bearbeiten",
+    "lastUpdated": "Zuletzt aktualisiert"
+  },
+  "actions": {
+    "edit": "Bearbeiten",
+    "duplicate": "Duplizieren",
+    "makePrivate": "Privat machen",
+    "shareToWorkspace": "Mit Arbeitsbereich teilen",
+    "shareWithUsers": "Mit Nutzern teilen",
+    "delete": "Löschen"
+  },
+  "dialog": {
+    "createTitle": "Prompt-Vorlage erstellen",
+    "editTitle": "Prompt-Vorlage bearbeiten",
+    "description": "Halte Prompts strukturiert und wiederverwendbar. Füge Tags hinzu, wähle eine Vorlage oder lass KI eine Version für dich entwerfen.",
+    "quickTemplates": "Schnellvorlagen",
+    "titleLabel": "Titel",
+    "titlePlaceholder": "z.B. Produkt-Launch-Retro-Prompt",
+    "visibilityLabel": "Sichtbarkeit",
+    "visibilityOptions": {
+      "private": "Privat",
+      "users": "Mit Nutzern teilen",
+      "workspace": "Mit Arbeitsbereich teilen"
+    },
+    "descriptionLabel": "Beschreibung",
+    "descriptionPlaceholder": "Erkläre, was dieser Prompt tun soll.",
+    "contentLabel": "Prompt-Anweisungen",
+    "contentPlaceholder": "Gib die vollständigen Anweisungen ein, die du wiederverwenden möchtest…",
+    "categoryLabel": "Kategorie",
+    "categoryPlaceholder": "z.B. Forschung, Entwicklung, Vertrieb",
+    "tagsLabel": "Tags",
+    "tagsPlaceholder": "Tag hinzufügen und Enter drücken",
+    "addTag": "Hinzufügen",
+    "removeTag": "Tag {{tag}} entfernen",
+    "guides": {
+      "title": "Leitfäden & Best Practices",
+      "item1": "Beschreibe Rolle, Ton, Ausgabeformat und Einschränkungen.",
+      "item2": "Liste konkrete Schritte oder Checklisten auf.",
+      "item3": "Teile als Arbeitsbereich, wenn der Prompt überprüft und stabil ist."
+    },
+    "aiAssist": "KI-Unterstützung",
+    "refining": "Verfeinerung läuft…",
+    "create": "Prompt erstellen",
+    "saveChanges": "Änderungen speichern"
+  },
+  "shareDialog": {
+    "title": "Prompt {{title}} teilen",
+    "selectTeamMembers": "Wähle Teamkollegen aus",
+    "searchPlaceholder": "Nutzer nach Name oder E-Mail suchen...",
+    "noUsersFound": "Keine Nutzer gefunden.",
+    "inviteByEmail": "Per E-Mail einladen",
+    "invitePlaceholder": "name1@company.com, name2@company.com",
+    "inviteHelper": "Verwende Komma oder Leerzeichen, um mehrere E-Mails zu trennen.",
+    "currentMembers": "Aktuelle Mitglieder",
+    "noMembers": "Noch keine Mitglieder.",
+    "loading": "Wird geladen…",
+    "ownerLabel": "Eigentümer",
+    "roleRead": "Lesen",
+    "roleWrite": "Bearbeiten",
+    "shareButton": "Teilen / Einladen",
+    "closeButton": "Schließen",
+    "successAddUsers": "Nutzer zum Prompt hinzugefügt",
+    "successInvites": "Einladungen versendet",
+    "successRoleUpdate": "Rolle aktualisiert",
+    "successRemove": "Mitglied entfernt",
+    "errorShare": "Teilen/Einladungen konnten nicht abgeschlossen werden",
+    "errorRole": "Rolle konnte nicht aktualisiert werden",
+    "errorRemove": "Mitglied konnte nicht entfernt werden",
+    "errorNoSelection": "Bitte wähle Nutzer aus oder gib E-Mails ein"
+  },
+  "templates": {
+    "executiveSummary": {
+      "label": "Executive Summary",
+      "helper": "Wandle lange Inhalte in prägnante Status-Updates um.",
+      "title": "Executive Summary Generator",
+      "description": "Fasse lange Dokumente in prägnante Executive-Updates zusammen."
+    },
+    "brainstorm": {
+      "label": "Kreative Ideen brainstormen",
+      "helper": "Divergente Denkansätze für Ideenfindung.",
+      "title": "Divergenter Ideen-Prompt",
+      "description": "Erzeuge unkonventionelle aber praktische Ideen."
+    },
+    "codeReview": {
+      "label": "Code-Review-Helfer",
+      "helper": "Strukturierte Checkliste für PR-Reviews.",
+      "title": "Code-Review-Checkliste",
+      "description": "Fange Regressionen ab und verbessere die Lesbarkeit bei Reviews."
+    }
+  },
+  "deleteDialog": {
+    "title": "Prompt löschen?",
+    "description": "Diese Aktion kann nicht rückgängig gemacht werden. Der Prompt {{title}} wird aus deiner Bibliothek entfernt.",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "deleting": "Wird gelöscht…"
+  },
+  "toast": {
+    "saved": "Prompt in deiner Bibliothek gespeichert.",
+    "updated": "Prompt aktualisiert.",
+    "deleted": "Prompt gelöscht.",
+    "duplicated": "Prompt dupliziert.",
+    "shared": "Prompt mit Arbeitsbereich geteilt.",
+    "madePrivate": "Prompt als privat gesetzt.",
+    "copied": "Prompt kopiert. Wechsle zum Chat, um ihn einzufügen.",
+    "copyFailed": "Prompt konnte nicht kopiert werden.",
+    "duplicateFailed": "Prompt konnte nicht dupliziert werden.",
+    "saveFailed": "Prompt konnte nicht gespeichert werden.",
+    "deleteFailed": "Prompt konnte nicht gelöscht werden.",
+    "visibilityFailed": "Sichtbarkeit konnte nicht aktualisiert werden.",
+    "loadFailed": "Prompts konnten nicht geladen werden",
+    "assistDrafted": "Assistent hat einen Prompt-Vorlage entworfen.",
+    "assistFailed": "Assistent konnte gerade keinen Prompt generieren.",
+    "titleRequired": "Bitte gib einen Titel und Prompt-Inhalt an."
+  }
+}

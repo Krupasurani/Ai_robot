@@ -1,0 +1,22 @@
+{
+  "network": {
+    "general": "Impossible de se connecter au serveur. Veuillez vérifier votre connexion internet.",
+    "timeout": "La requête a expiré. Veuillez réessayer."
+  },
+  "auth": {
+    "general": "Échec de l'authentification. Veuillez vous reconnecter."
+  },
+  "validation": {
+    "general": "Données saisies invalides. Veuillez vérifier et réessayer."
+  },
+  "generic": {
+    "server": "Le serveur a rencontré une erreur. Veuillez réessayer plus tard.",
+    "not_found": "La ressource demandée est introuvable.",
+    "unknown": "Une erreur s'est produite. Veuillez réessayer plus tard."
+  },
+  "backend": {
+    "UNKNOWN": "Une erreur inattendue s'est produite. Veuillez réessayer plus tard."
+  }
+}
+
+

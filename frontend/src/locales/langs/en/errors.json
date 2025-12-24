@@ -1,0 +1,22 @@
+{
+  "network": {
+    "general": "Unable to connect to server. Please check your internet connection.",
+    "timeout": "Request timed out. Please try again."
+  },
+  "auth": {
+    "general": "Authentication failed. Please sign in again."
+  },
+  "validation": {
+    "general": "Invalid input data. Please check and try again."
+  },
+  "generic": {
+    "server": "The server encountered an error. Please try again later.",
+    "not_found": "The requested resource was not found.",
+    "unknown": "Something went wrong. Please try again later."
+  },
+  "backend": {
+    "UNKNOWN": "An unexpected error occurred. Please try again later."
+  }
+}
+
+

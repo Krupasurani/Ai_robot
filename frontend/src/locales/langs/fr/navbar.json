@@ -1,0 +1,145 @@
+{
+  "app": "Application",
+  "job": "Emploi",
+  "user": "Utilisateur",
+  "travel": "Voyage",
+  "invoice": "Facture",
+  "blog": {
+    "title": "Blog",
+    "caption": "Raccourcis clavier personnalisés."
+  },
+  "subheader": "Sous-titre",
+  "navigation": {
+    "overview": "Aperçu",
+    "assistant": "Assistant",
+    "agents": "Agents",
+    "knowledgeBase": "Base de connaissances",
+    "knowledgeSearch": "Recherche de connaissances",
+    "promptLibrary": "Bibliothèque de prompts",
+    "canvas": "Canvas",
+    "projects": "Projets",
+    "administration": "Administration",
+    "settings": "Paramètres",
+    "connectorSettings": "Paramètres d'application et intégrations",
+    "myProfile": "Mon profil",
+    "companyProfile": "Paramètres d'entreprise",
+    "company": "Entreprise",
+    "companySettings": "Paramètres d'entreprise",
+    "authentication": "Authentification",
+    "connectors": "Paramètres d'application et intégrations",
+    "services": "Services",
+    "preferences": "Préférences",
+    "platformSettings": "Paramètres de plateforme",
+    "sessionManagement": "Gestion des sessions",
+    "personalSection": "Personnel",
+    "usersAndGroups": "Utilisateurs et groupes",
+    "personalProfile": "Profil personnel",
+    "licenseBilling": "Licences et facturation"
+  },
+  "welcome": {
+    "title": "Workplace AI qui comprend votre lieu de travail de l'intérieur",
+    "placeholder": "Demandez n'importe quoi..."
+  },
+  "knowledgeBases": {
+    "title": "Bases de connaissances",
+    "description": "Collectez et gérez toutes les sources de connaissances pour vos agents.",
+    "countLabel": "{{count}} Base de connaissances",
+    "countLabelPlural": "{{count}} Bases de connaissances"
+  },
+  "knowledgeBase": {
+    "aiAssistant": "Assistant IA",
+    "askQuestionsAboutDocument": "Posez des questions sur ce document"
+  },
+  "pages": {
+    "sessionManagement": {
+      "title": "Gestion des sessions",
+      "description": "Gérez vos sessions actives et déconnectez-vous d'autres appareils."
+    },
+    "personalProfile": {
+      "title": "Profil personnel"
+    },
+    "applicationPreferences": {
+      "title": "Préférences d'application",
+      "description": "Configurez les options de langue et d'interface pour une meilleure expérience dans votre organisation."
+    },
+    "companyProfile": {
+      "title": "Paramètres d'entreprise",
+      "logo": "Logo d'entreprise",
+      "logoDescription": "Votre logo apparaîtra sur votre tableau de bord de compte, vos e-mails et les documents générés par Thero."
+    },
+    "connectorSettings": {
+      "title": "Paramètres des connecteurs"
+    }
+  },
+  "chat": {
+    "newChat": "Nouveau chat",
+    "creating": "Création...",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "previous7Days": "7 derniers jours",
+    "previous30Days": "30 derniers jours",
+    "older": "Plus ancien",
+    "projectHome": "Accueil du projet",
+    "projectPlaceholder": "Nouveau chat dans {{projectTitle}}"
+  },
+  "chatInput": {
+    "buttons": {
+      "insertPromptFromLibrary": "Insérer un prompt depuis la bibliothèque",
+      "toggleReasoning": "Raisonnement",
+      "enableReasoning": "Raisonnement",
+      "disableReasoning": "Raisonnement",
+      "toggleWebSearch": "Recherche web",
+      "enableWebSearch": "Recherche web",
+      "disableWebSearch": "Recherche web",
+      "attachFile": "Joindre un fichier",
+      "startDictation": "Dictée",
+      "stopRecording": "Arrêter la dictée",
+      "speechNotSupported": "La reconnaissance vocale n'est pas prise en charge par ce navigateur"
+    },
+    "modelTypes": {
+      "agent": "Agent",
+      "knowledge": "Connaissance",
+      "chat": "Chat",
+      "search": "Recherche",
+      "deepResearch": "Recherche approfondie",
+      "image": "Image"
+    },
+    "filterSources": "Filtrer les sources",
+    "selectAppsAndKnowledgeBases": "Sélectionner les applications et bases de connaissances",
+    "context": "Contexte :",
+    "filter": "Filtre :",
+    "attachedFiles": "Fichiers joints",
+    "dropFilesHere": "Déposer les fichiers ici",
+    "searchMentions": "Rechercher ou entrer @nom...",
+    "all": "Tous",
+    "kb": "BC",
+    "projects": "Projets",
+    "files": "Fichiers",
+    "apps": "Apps",
+    "users": "Personnes",
+    "loading": "Chargement...",
+    "noResults": "Aucun résultat",
+    "uploading": "Téléchargement...",
+    "processing": "Traitement...",
+    "completed": "Terminé",
+    "error": "Erreur",
+    "promptLibrary": "Bibliothèque de prompts",
+    "browseSavedPrompts": "Parcourir les prompts sauvegardés et les insérer dans cette conversation sans quitter la page.",
+    "noPromptsAvailable": "Aucun prompt disponible pour le moment.",
+    "searchPrompts": "Rechercher des prompts",
+    "usePrompt": "Utiliser",
+    "openFullPromptLibrary": "Ouvrir la bibliothèque complète de prompts",
+    "webSearchActive": "Recherche web active",
+    "reasoningActive": "Raisonnement actif",
+    "agentLoadError": "Impossible de charger les agents pour le moment.",
+    "selectAgentTooltip": "Sélectionnez un agent pour discuter",
+    "agentSelectedTooltip": "Discussion avec {{agentName}}",
+    "selectAgentPlaceholder": "Choisir un agent",
+    "loadingAgents": "Chargement des agents...",
+    "noAgentsFound": "Aucun agent disponible",
+    "agentFallbackName": "Agent",
+    "agentRequired": "Veuillez sélectionner un agent avant d'envoyer.",
+    "quickModeActivate": "Activer le mode rapide",
+    "quickModeDeactivate": "Désactiver le mode rapide"
+  }
+}

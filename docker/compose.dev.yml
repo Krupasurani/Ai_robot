@@ -1,0 +1,66 @@
+# =============================================================================
+# Thero AI - Development Overrides
+# =============================================================================
+# Hot-reload, debug ports, and development-friendly settings.
+#
+# Usage: docker compose -f docker/compose.infra.yml -f docker/compose.services.yml -f docker/compose.dev.yml up
+# =============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # Frontend - Hot Reload
+  # ---------------------------------------------------------------------------
+  frontend:
+    build:
+      context: ../
+      dockerfile: docker/services/frontend/Dockerfile
+      target: builder
+    volumes:
+      - ../frontend/dist:/usr/share/nginx/html:ro
+    environment:
+      - NODE_ENV=development
+
+  # ---------------------------------------------------------------------------
+  # API Gateway - Hot Reload
+  # ---------------------------------------------------------------------------
+  api-gateway:
+    volumes:
+      - ../services/nodejs/apps/src:/app/src:ro
+    environment:
+      - NODE_ENV=development
+      - LOG_LEVEL=debug
+    command: ["npm", "run", "dev"]
+
+  # ---------------------------------------------------------------------------
+  # Query Service - Hot Reload
+  # ---------------------------------------------------------------------------
+  query:
+    volumes:
+      - ../services/python/app:/app/app:ro
+      - ../services/python/libs:/app/libs:ro
+    environment:
+      - LOG_LEVEL=debug
+    command: ["python", "-m", "uvicorn", "app.query_main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+
+  # ---------------------------------------------------------------------------
+  # Indexing Service - Hot Reload
+  # ---------------------------------------------------------------------------
+  indexing:
+    volumes:
+      - ../services/python/app:/app/app:ro
+      - ../services/python/libs:/app/libs:ro
+    environment:
+      - LOG_LEVEL=debug
+    command: ["python", "-m", "uvicorn", "app.indexing_main:app", "--host", "0.0.0.0", "--port", "8091", "--reload"]
+
+  # ---------------------------------------------------------------------------
+  # Connector Service - Hot Reload
+  # ---------------------------------------------------------------------------
+  connector:
+    volumes:
+      - ../services/python/app:/app/app:ro
+      - ../services/python/libs:/app/libs:ro
+    environment:
+      - LOG_LEVEL=debug
+    command: ["python", "-m", "uvicorn", "app.connectors_main:app", "--host", "0.0.0.0", "--port", "8088", "--reload"]
+

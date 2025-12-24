@@ -1,0 +1,308 @@
+import asyncio
+import os
+
+import aiohttp  # type: ignore
+from aiokafka import AIOKafkaConsumer  #type: ignore
+from redis.asyncio import Redis, RedisError  #type: ignore
+from redis.exceptions import AuthenticationError  #type: ignore
+
+from libs.core.config import ConfigurationService
+from libs.core.constants import ConfigPath as config_node_constants
+from libs.core.constants import DefaultEndpoint, HealthCheckConfig, HttpStatusCode
+from libs.core.utils import build_redis_url
+
+
+class Health:
+    @staticmethod
+    async def system_health_check(container) -> None:
+        """Health check method that verifies external services health"""
+        logger = container.logger()
+        logger.info("🔍 Starting system health check...")
+        await Health.health_check_etcd(container)
+        await Health.health_check_arango(container)
+        await Health.health_check_kafka(container)
+        await Health.health_check_redis(container)
+        await Health.health_check_vector_db(container)
+        logger.info("✅ External services health check passed")
+
+    @staticmethod
+    async def health_check_connector_service(container) -> None:
+        """Health check connector service via /health with simple retry logic.
+
+        Polls up to CONNECTOR_HEALTH_CHECK_MAX_RETRIES times with a configurable interval
+        before raising an exception.
+
+        """
+        logger = container.logger()
+        logger.info("🔍 Starting Connector service health check...")
+
+        # Get connector endpoint from config service
+        config_service: ConfigurationService = container.config_service()
+        endpoints = await config_service.get_config(config_node_constants.ENDPOINTS.value)
+        connector_endpoint = (
+            (endpoints or {}).get("connectors", {}).get("endpoint", DefaultEndpoint.CONNECTOR.value)
+        )
+
+        connector_url = f"{connector_endpoint}/health"
+        max_retries = HealthCheckConfig.CONNECTOR_HEALTH_CHECK_MAX_RETRIES.value
+        retry_interval = HealthCheckConfig.CONNECTOR_HEALTH_CHECK_RETRY_INTERVAL_SECONDS.value
+
+        last_error_msg = None
+
+        for attempt in range(1, max_retries + 1):
+            try:
+                logger.debug(
+                    f"Checking connector service health at endpoint: {connector_url} "
+                    f"(attempt {attempt}/{max_retries})"
+                )
+                # TODO: remove aiohttp dependency and use http client from sources module
+                async with aiohttp.ClientSession() as session:
+                    async with session.get(connector_url) as response:
+                        if response.status == HttpStatusCode.SUCCESS.value:
+                            logger.info("✅ Connector service health check passed")
+                            return
+                        else:
+                            error_body = await response.text()
+                            last_error_msg = (
+                                f"Connector service health check failed with status "
+                                f"{response.status}: {error_body}"
+                            )
+                            logger.warning(f"❌ {last_error_msg}")
+
+            except aiohttp.ClientError as e:
+                last_error_msg = (
+                    f"Connection error during connector service health check: {str(e)}"
+                )
+                logger.warning(f"❌ {last_error_msg}")
+            except Exception as e:
+                last_error_msg = f"Connector service health check failed: {str(e)}"
+                logger.warning(f"❌ {last_error_msg}")
+
+            # If not the last attempt, wait before retrying
+            if attempt < max_retries:
+                logger.info(f"⏳ Retrying connector service health check in {retry_interval} seconds...")
+                await asyncio.sleep(retry_interval)
+
+        # All attempts failed
+        final_msg = last_error_msg or "Connector service health check failed after retries"
+        logger.error(f"❌ {final_msg}")
+        raise Exception(final_msg)
+
+    @staticmethod
+    async def health_check_etcd(container) -> None:
+        """Health check method that verifies etcd service health"""
+        logger = container.logger()
+        logger.info("🔍 Starting etcd health check...")
+        try:
+            etcd_url = os.getenv("ETCD_URL")
+            if not etcd_url:
+                error_msg = "ETCD_URL environment variable is not set"
+                logger.error(f"❌ {error_msg}")
+                raise Exception(error_msg)
+
+            logger.debug(f"Checking etcd health at endpoint: {etcd_url}/health")
+            # TODO: remove aiohttp dependency and use http client from sources module
+            async with aiohttp.ClientSession() as session:
+                async with session.get(f"{etcd_url}/health") as response:
+                    if response.status == HttpStatusCode.SUCCESS.value:
+                        response_text = await response.text()
+                        logger.info("✅ etcd health check passed")
+                        logger.debug(f"etcd health response: {response_text}")
+                    else:
+                        error_msg = (
+                            f"etcd health check failed with status {response.status}"
+                        )
+                        logger.error(f"❌ {error_msg}")
+                        raise Exception(error_msg)
+        except aiohttp.ClientError as e:
+            error_msg = f"Connection error during etcd health check: {str(e)}"
+            logger.error(f"❌ {error_msg}")
+            raise
+        except Exception as e:
+            error_msg = f"etcd health check failed: {str(e)}"
+            logger.error(f"❌ {error_msg}")
+            raise
+
+    @staticmethod
+    async def health_check_arango(container) -> None:
+        """Health check method that verifies arango service health"""
+        logger = container.logger()
+        logger.info("🔍 Starting ArangoDB health check...")
+        try:
+            # Get the config_service instance first, then call get_config
+            config_service = container.config_service()
+            arangodb_config = await config_service.get_config(
+                config_node_constants.ARANGODB.value
+            )
+            username = arangodb_config["username"]
+            password = arangodb_config["password"]
+
+            logger.debug("Checking ArangoDB connection using ArangoClient")
+
+            # Get the ArangoClient from the container
+            client = await container.arango_client()
+
+            # Connect to system database
+            sys_db = client.db("_system", username=username, password=password)
+
+            # Check server version to verify connection
+            server_version = sys_db.version()
+            logger.info("✅ ArangoDB health check passed")
+            logger.debug(f"ArangoDB server version: {server_version}")
+
+        except Exception as e:
+            error_msg = f"ArangoDB health check failed: {str(e)}"
+            logger.error(f"❌ {error_msg}")
+            raise Exception(error_msg)
+
+    @staticmethod
+    async def health_check_kafka(container) -> None:
+        """Health check method that verifies kafka service health"""
+        logger = container.logger()
+        logger.info("🔍 Starting Kafka health check...")
+
+        # Allow skipping Kafka health check for standalone/development mode
+        if os.getenv("SKIP_KAFKA_HEALTH_CHECK", "").lower() in ("true", "1", "yes"):
+            logger.warning("⚠️ Skipping Kafka health check (SKIP_KAFKA_HEALTH_CHECK=true)")
+            return
+
+        consumer = None
+        try:
+            kafka_config = await container.config_service().get_config(
+                config_node_constants.KAFKA.value
+            )
+            brokers = kafka_config["brokers"]
+            logger.debug(f"Checking Kafka connection at: {brokers}")
+
+            # Try to create a consumer with aiokafka
+            try:
+                config = {
+                    "bootstrap_servers": ",".join(brokers),  # aiokafka uses bootstrap_servers
+                    "group_id": "health_check_test",
+                    "auto_offset_reset": "earliest",
+                    "enable_auto_commit": True,
+                }
+
+                # Create and start consumer to test connection
+                consumer = AIOKafkaConsumer(**config)
+                await consumer.start()
+
+                # Try to get cluster metadata to verify connection
+                try:
+                    # TODO: remove this private access
+                    cluster_metadata = consumer._client.cluster
+                    available_topics = list(cluster_metadata.topics())
+                    logger.debug(f"Available Kafka topics: {available_topics}")
+                except Exception as e:
+                    logger.warning(f"Error getting Kafka cluster metadata: {str(e)}")
+                    # If metadata fails, just try basic connection test
+                    logger.debug("Basic Kafka connection test passed")
+
+                logger.info("✅ Kafka health check passed")
+
+            except Exception as e:
+                error_msg = f"Failed to connect to Kafka: {str(e)}"
+                logger.error(f"❌ {error_msg}")
+                raise Exception(error_msg)
+
+        except Exception as e:
+            error_msg = f"Kafka health check failed: {str(e)}"
+            logger.error(f"❌ {error_msg}")
+            raise
+        finally:
+            # Clean up consumer
+            if consumer:
+                try:
+                    await consumer.stop()
+                    logger.debug("Health check consumer stopped")
+                except Exception as e:
+                    logger.warning(f"Error stopping health check consumer: {e}")
+
+    @staticmethod
+    async def health_check_redis(container) -> None:
+        """Health check method that verifies redis service health"""
+        logger = container.logger()
+        logger.info("🔍 Starting Redis health check...")
+        try:
+            config_service : ConfigurationService = container.config_service()
+            redis_config = await config_service.get_config(
+                config_node_constants.REDIS.value
+            )
+            # Build Redis URL with password if provided
+            redis_url = build_redis_url(redis_config)
+            logger.debug(f"Checking Redis connection at: {redis_url}")
+            # Create Redis client and attempt to ping
+            redis_client = Redis.from_url(redis_url, socket_timeout=5.0)
+            try:
+                await redis_client.ping()
+                logger.info("✅ Redis health check passed")
+            except AuthenticationError as auth_error:
+                # If authentication fails, try without password as fallback
+                error_str = str(auth_error)
+                if "password" in error_str.lower() and redis_config.get("password"):
+                    logger.warning(
+                        "⚠️ Redis authentication failed with password, "
+                        "attempting connection without password..."
+                    )
+                    # Build URL without password
+                    redis_config_no_password = redis_config.copy()
+                    redis_config_no_password["password"] = None
+                    redis_url_no_password = build_redis_url(redis_config_no_password)
+                    logger.debug(f"Retrying Redis connection at: {redis_url_no_password}")
+
+                    # Close the previous client
+                    await redis_client.close()
+
+                    # Try again without password
+                    redis_client_no_password = Redis.from_url(
+                        redis_url_no_password, socket_timeout=5.0
+                    )
+                    try:
+                        await redis_client_no_password.ping()
+                        logger.info("✅ Redis health check passed (without password)")
+                    except RedisError as re:
+                        error_msg = f"Failed to connect to Redis: {str(re)}"
+                        logger.error(f"❌ {error_msg}")
+                        raise Exception(error_msg)
+                    finally:
+                        await redis_client_no_password.close()
+                else:
+                    error_msg = f"Failed to authenticate with Redis: {str(auth_error)}"
+                    logger.error(f"❌ {error_msg}")
+                    raise Exception(error_msg)
+            except RedisError as re:
+                error_msg = f"Failed to connect to Redis: {str(re)}"
+                logger.error(f"❌ {error_msg}")
+                raise Exception(error_msg)
+            finally:
+                await redis_client.close()
+
+        except Exception as e:
+            error_msg = f"Redis health check failed: {str(e)}"
+            logger.error(f"❌ {error_msg}")
+            raise
+
+    @staticmethod
+    async def health_check_vector_db(container) -> None:
+        """Health check method that verifies vector db service health"""
+        logger = container.logger()
+        logger.info("🔍 Starting vector db service health check...")
+        try:
+            # Check if vector_db_service is available in the container
+            if not hasattr(container, 'vector_db_service'):
+                logger.info("⚠️ vector_db_service not available in this container, skipping health check")
+                return
+
+            vector_db_service = await container.vector_db_service()
+            try:
+                # Fetch collections to check connectivity
+                await vector_db_service.get_collections()
+                logger.info("✅ vector db service is healthy!")
+            except Exception as e:
+                error_msg = f"vector db service health check failed: {str(e)}"
+                logger.error(f"❌ {error_msg}")
+                raise
+        except Exception as e:
+            error_msg = f"vector db service health check failed: {str(e)}"
+            logger.error(f"❌ {error_msg}")
+            raise

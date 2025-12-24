@@ -1,0 +1,23 @@
+{
+  "delete": {
+    "title": "Löschen bestätigen",
+    "cannot_be_undone": "Diese Aktion kann nicht rückgängig gemacht werden",
+    "cancel": "Abbrechen",
+    "delete": "Löschen",
+    "deleting": "Wird gelöscht..."
+  },
+  "kb": {
+    "create": {
+      "title": "Wissensdatenbank erstellen",
+      "description": "Erstellen Sie eine neue Wissensdatenbank, um Ihre Dokumente, Informationen und Daten für die KI-gestützte Suche und den Abruf zu organisieren und zu speichern.",
+      "name_label": "Name der Wissensdatenbank",
+      "name_placeholder": "Geben Sie den Namen der Wissensdatenbank ein...",
+      "desc_label": "Beschreibung",
+      "desc_placeholder": "Wie wird diese Wissensdatenbank verwendet?",
+      "optional": "optional",
+      "cancel": "Abbrechen",
+      "create": "Wissensdatenbank erstellen",
+      "creating": "Wird erstellt..."
+    }
+  }
+}

@@ -1,0 +1,153 @@
+# =============================================================================
+# Docker Build Context Exclusions
+# =============================================================================
+# This file reduces build context size and speeds up builds significantly.
+# Without this, Docker copies everything including node_modules, venv, etc.
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Version Control
+# -----------------------------------------------------------------------------
+.git
+.gitignore
+.gitattributes
+
+# -----------------------------------------------------------------------------
+# IDE and Editor
+# -----------------------------------------------------------------------------
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# -----------------------------------------------------------------------------
+# Documentation (not needed in runtime)
+# -----------------------------------------------------------------------------
+*.md
+!README.md
+docs/
+*.plan.md
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+**/__pycache__/
+**/*.py[cod]
+**/*$py.class
+**/*.so
+**/.Python
+**/develop-eggs/
+**/downloads/
+**/eggs/
+**/.eggs/
+# Python lib directories (but not frontend/src/lib!)
+services/python/build/
+services/python/lib/
+services/python/lib64/
+**/parts/
+**/sdist/
+**/var/
+**/wheels/
+**/*.egg-info/
+**/.installed.cfg
+**/*.egg
+**/venv/
+**/ENV/
+**/env/
+**/.venv/
+**/pip-log.txt
+**/pip-delete-this-directory.txt
+**/.mypy_cache/
+**/.pytest_cache/
+**/.coverage
+**/htmlcov/
+**/.tox/
+**/.nox/
+**/.ruff_cache/
+
+# Python logs
+services/python/logs/
+**/*.log
+
+# Celery
+**/celerybeat-schedule
+**/celerybeat.pid
+
+# -----------------------------------------------------------------------------
+# Node.js
+# -----------------------------------------------------------------------------
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.npm/
+**/.yarn/
+**/dist/
+**/.next/
+**/.nuxt/
+**/.cache/
+
+# -----------------------------------------------------------------------------
+# Docker
+# -----------------------------------------------------------------------------
+**/Dockerfile*
+**/docker-compose*.yml
+**/.docker/
+deployment/
+
+# -----------------------------------------------------------------------------
+# Testing
+# -----------------------------------------------------------------------------
+**/test/
+**/tests/
+**/__tests__/
+**/coverage/
+**/*.test.ts
+**/*.test.js
+**/*.spec.ts
+**/*.spec.js
+
+# -----------------------------------------------------------------------------
+# Environment and Secrets
+# -----------------------------------------------------------------------------
+**/.env
+**/.env.*
+**/env.template
+**/*.pem
+**/*.key
+**/secrets/
+
+# -----------------------------------------------------------------------------
+# Temporary and Build Artifacts
+# -----------------------------------------------------------------------------
+**/tmp/
+**/temp/
+**/*.tmp
+**/*.bak
+**/*.orig
+
+# -----------------------------------------------------------------------------
+# Large Files (models should be downloaded at build time)
+# -----------------------------------------------------------------------------
+**/*.bin
+**/*.h5
+**/*.onnx
+**/*.pt
+**/*.pth
+**/*.safetensors
+
+# -----------------------------------------------------------------------------
+# Project-specific exclusions
+# -----------------------------------------------------------------------------
+# Frontend build output (we build fresh in Docker)
+frontend/dist/
+
+# Backend build output (we build fresh in Docker)
+services/nodejs/apps/dist/
+
+# Local development files
+start-core.sh
+*.plan.md
+

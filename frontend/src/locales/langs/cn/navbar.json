@@ -1,0 +1,136 @@
+{
+  "app": "应用",
+  "job": "工作",
+  "user": "用户",
+  "travel": "旅行",
+  "invoice": "发票",
+  "blog": {
+    "title": "博客",
+    "caption": "自定义键盘快捷键。"
+  },
+  "subheader": "子标题",
+  "navigation": {
+    "overview": "概览",
+    "assistant": "助手",
+    "agents": "智能体",
+    "knowledgeBase": "知识库",
+    "knowledgeSearch": "知识搜索",
+    "promptLibrary": "提示库",
+    "canvas": "画布",
+    "projects": "项目",
+    "administration": "管理",
+    "settings": "设置",
+    "connectorSettings": "连接器设置",
+    "myProfile": "我的资料",
+    "companyProfile": "公司资料",
+    "company": "公司",
+    "authentication": "身份验证",
+    "connectors": "连接器",
+    "services": "服务",
+    "preferences": "偏好设置",
+    "platformSettings": "平台设置",
+    "sessionManagement": "会话管理",
+    "personalProfile": "个人资料",
+    "licenseBilling": "许可与账单"
+  },
+  "welcome": {
+    "title": "深入了解您工作场所的 Workplace AI",
+    "placeholder": "问任何问题..."
+  },
+  "knowledgeBase": {
+    "aiAssistant": "AI助手",
+    "askQuestionsAboutDocument": "询问有关此文档的问题"
+  },
+  "pages": {
+    "sessionManagement": {
+      "title": "会话管理",
+      "description": "管理您的活跃会话并从其他设备注销。"
+    },
+    "personalProfile": {
+      "title": "个人资料"
+    },
+    "applicationPreferences": {
+      "title": "应用程序偏好",
+      "description": "配置语言和界面选项，为您的组织提供更好的体验。"
+    },
+    "companyProfile": {
+      "title": "公司资料",
+      "logo": "公司标志",
+      "logoDescription": "您的标志将出现在您的账户仪表板、电子邮件和 Thero 生成的文档中。"
+    },
+    "connectorSettings": {
+      "title": "连接器设置",
+      "subtitle": "集成",
+      "description": "管理与 SaaS 工具的集成并监控其同步状态。"
+    }
+  },
+  "chat": {
+    "newChat": "新聊天",
+    "creating": "创建中...",
+    "today": "今天",
+    "yesterday": "昨天",
+    "previous7Days": "前7天",
+    "previous30Days": "前30天",
+    "older": "更早",
+    "projectHome": "项目主页",
+    "projectPlaceholder": "{{projectTitle}} 中的新聊天"
+  },
+  "chatInput": {
+    "buttons": {
+      "insertPromptFromLibrary": "Insert prompt from library",
+      "toggleReasoning": "Reasoning",
+      "enableReasoning": "Reasoning",
+      "disableReasoning": "Reasoning",
+      "toggleWebSearch": "Web search",
+      "enableWebSearch": "Web search",
+      "disableWebSearch": "Web search",
+      "attachFile": "Attach file",
+      "startDictation": "Dictation",
+      "stopRecording": "Stop dictation",
+      "speechNotSupported": "Speech recognition not supported by this browser"
+    },
+    "modelTypes": {
+      "agent": "Agent",
+      "knowledge": "Knowledge",
+      "chat": "Chat",
+      "search": "Search",
+      "deepResearch": "Deep Research",
+      "image": "Image"
+    },
+    "filterSources": "Filter Sources",
+    "selectAppsAndKnowledgeBases": "Select apps and knowledge bases",
+    "context": "Context:",
+    "filter": "Filter:",
+    "attachedFiles": "Attached files",
+    "dropFilesHere": "Drop files here",
+    "searchMentions": "Search or enter @name...",
+    "all": "All",
+    "kb": "KB",
+    "projects": "Projects",
+    "files": "Files",
+    "apps": "Apps",
+    "users": "Users",
+    "loading": "Loading...",
+    "noResults": "No results found",
+    "uploading": "Uploading...",
+    "processing": "Processing...",
+    "completed": "Completed",
+    "error": "Error",
+    "promptLibrary": "Prompt Library",
+    "browseSavedPrompts": "Browse saved prompts and insert them into this chat without leaving the page.",
+    "noPromptsAvailable": "No prompts available yet.",
+    "searchPrompts": "Search prompts",
+    "usePrompt": "Use",
+    "openFullPromptLibrary": "Open full prompt library",
+    "webSearchActive": "Web search active",
+    "reasoningActive": "Reasoning active",
+    "agentLoadError": "Unable to load agents right now.",
+    "selectAgentTooltip": "Select an agent to start chatting",
+    "agentSelectedTooltip": "Chatting with {{agentName}}",
+    "selectAgentPlaceholder": "Select agent",
+    "loadingAgents": "Loading agents...",
+    "noAgentsFound": "No agents available yet",
+    "agentFallbackName": "Agent",
+    "agentRequired": "Please select an agent before sending."
+  }
+}

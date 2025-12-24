@@ -1,0 +1,641 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@plugin "@tailwindcss/typography";
+
+
+@import "katex/dist/katex.min.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/** **************************************
+* Fonts - Design System
+*************************************** */
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-Variable-Italic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/fonts/bricolage-grotesque-variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Thin_0.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-ThinItalic_0.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-ExtraLight_0.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-ExtraLightItalic_0.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Light_0.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-LightItalic_0.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Regular_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Italic_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Medium_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-MediumItalic_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-SemiBold_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-SemiBoldItalic_0.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Bold_0.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-BoldItalic_0.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-ExtraBold_0.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-ExtraBoldItalic_0.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-Black_0.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('/fonts/Montserrat-BlackItalic_0.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/fonts/Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/** **************************************
+* Plugins
+*************************************** */
+
+/* nprogress - Top loading bar */
+@import 'nprogress/nprogress.css';
+
+/* lightbox */
+@import './components/lightbox/styles.css';
+
+/* chart */
+@import './components/chart/styles.css';
+
+@layer base {
+
+  /** **************************************
+  * Baseline
+  *************************************** */
+  html,
+  body {
+    overflow: visible;
+    font-family: 'Bricolage Grotesque', 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      sans-serif;
+  }
+
+  /* Radix UI overlays - ensure they appear above everything */
+  [data-radix-popper-content-wrapper],
+  [data-slot='dropdown-menu-content'],
+  [data-slot='tooltip-content'] {
+    z-index: 9999;
+  }
+
+  /* App layout structure */
+  body,
+  #root {
+    @apply flex flex-col min-h-full;
+  }
+
+  /* Number input - hide spinner controls */
+  input[type='number'] {
+    appearance: none;
+    -moz-appearance: textfield;
+  }
+
+  input[type='number']::-webkit-outer-spin-button,
+  input[type='number']::-webkit-inner-spin-button {
+    @apply m-0;
+    -webkit-appearance: none;
+  }
+}
+
+@layer base {
+
+  /* Password input - hide native reveal/clear controls */
+  input[type='password']::-ms-reveal,
+  input[type='password']::-ms-clear {
+    display: none;
+  }
+
+  /* Safari/WebKit: hide built-in decoration/reveal controls */
+  input[type='password']::-webkit-textfield-decoration-container,
+  input[type='password']::-webkit-credentials-auto-fill-button {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .font-roboto {
+    font-family: 'Roboto', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.15s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-caret-blink {
+    animation: caret-blink 1s ease-in-out infinite;
+  }
+
+  @keyframes caret-blink {
+
+    0%,
+    50% {
+      opacity: 1;
+    }
+
+    51%,
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-wave-bounce {
+    animation: wave-bounce 1.2s infinite ease-in-out;
+  }
+
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes wave-bounce {
+
+    0%,
+    80%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    40% {
+      transform: translateY(-8px);
+      opacity: 0.7;
+    }
+  }
+
+  /* Custom Animations - Keyframes */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateY(var(--orbit-radius, 50px)) rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg) translateY(var(--orbit-radius, 50px)) rotate(-360deg);
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes breathe {
+
+    0%,
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+    }
+
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px hsl(var(--primary) / 0.6);
+    }
+  }
+
+  @keyframes glow {
+
+    0%,
+    100% {
+      box-shadow: 0 0 5px hsl(var(--primary) / 0.3), 0 0 10px hsl(var(--primary) / 0.2);
+    }
+
+    50% {
+      box-shadow: 0 0 10px hsl(var(--primary) / 0.6), 0 0 20px hsl(var(--primary) / 0.4);
+    }
+  }
+
+  /* Animation Utilities */
+  .animate-orbit {
+    animation: orbit var(--orbit-duration, 20s) linear infinite;
+    animation-delay: var(--orbit-delay, 0s);
+  }
+
+  .animate-orbit-reverse {
+    animation: orbit var(--orbit-duration, 20s) linear infinite reverse;
+    animation-delay: var(--orbit-delay, 0s);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-breathe {
+    animation: breathe 4s ease-in-out infinite;
+  }
+
+  .animate-breathe-fast {
+    animation: breathe 2s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .animate-glow-fast {
+    animation: glow 1s ease-in-out infinite;
+  }
+
+  /* Chat Bot Filters Scrollbar - Using Tailwind color system */
+  .chat-bot-filters-scroll::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .chat-bot-filters-scroll::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .chat-bot-filters-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.1);
+    border-radius: 2px;
+  }
+
+  .chat-bot-filters-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.2);
+  }
+
+  /* Performance optimization for text rendering */
+  p, h1, h2, h3, h4, h5, h6, span, div {
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Optimize text-muted-foreground elements for faster LCP */
+  .text-muted-foreground {
+    color: hsl(var(--muted-foreground));
+    contain: layout style;
+  }
+}
+
+:root {
+  /* Design System Colors */
+  --radius: 0.65rem;
+
+  /* Main Content - White Background */
+  --background: #FFFFFF;
+  --foreground: #1F2937;
+  /* Dark grey primary text */
+
+  /* Cards - White with subtle shadows */
+  --card: #FFFFFF;
+  --card-foreground: #1F2937;
+
+  /* Popovers */
+  --popover: #FFFFFF;
+  --popover-foreground: #1F2937;
+
+  /* Primary - Blue accent for interactive elements */
+  --primary: #3B82F6;
+  --primary-foreground: #FFFFFF;
+
+  /* Secondary - Light grey */
+  --secondary: #F5F5F5;
+  --secondary-foreground: #1F2937;
+
+  /* Muted - Light grey for secondary text */
+  --muted: #F5F5F5;
+  --muted-foreground: #6B7280;
+  /* Lighter grey for secondary text */
+
+  /* Accent */
+  --accent: #F5F5F5;
+  --accent-foreground: #1F2937;
+
+  /* Destructive */
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+
+  /* Borders and Inputs - Light grey */
+  --border: #e3e3e3;
+  --input: #e3e3e3;
+  --ring: #3B82F6;
+  /* Blue for focus rings */
+
+  /* Charts */
+  --chart-1: #3B82F6;
+  --chart-2: #60A5FA;
+  --chart-3: #93C5FD;
+  --chart-4: #DBEAFE;
+  --chart-5: #EFF6FF;
+
+  /* Sidebar - Subtle gray background, slightly darker than white */
+  --sidebar: #fdfdfd;
+  --sidebar-foreground: #1F2937;
+  --sidebar-primary: #3B82F6;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F0F0F0;
+  --sidebar-accent-foreground: #1F2937;
+  --sidebar-border: #e3e3e3;
+  --sidebar-ring: #3B82F6;
+
+  /* Sonner Toast Colors - Light Mode */
+  --success-bg: hsl(142, 76%, 94%);
+  --success-text: hsl(142, 70%, 20%);
+  --success-border: hsl(142, 60%, 50%);
+
+  --error-bg: hsl(0, 72%, 94%);
+  --error-text: hsl(0, 70%, 20%);
+  --error-border: hsl(0, 65%, 50%);
+
+  --warning-bg: hsl(38, 92%, 94%);
+  --warning-text: hsl(38, 90%, 20%);
+  --warning-border: hsl(38, 80%, 50%);
+
+  --info-bg: hsl(217, 91%, 94%);
+  --info-text: hsl(217, 90%, 20%);
+  --info-border: hsl(217, 80%, 50%);
+}
+
+.dark {
+  /* Dark Mode */
+  --background: #18181b;
+  /* Dark background */
+  --foreground: #F9FAFB;
+  /* Light text */
+
+  --card: #27272A;
+  /* Dark card background */
+  --card-foreground: #F9FAFB;
+
+  --popover: #27272A;
+  --popover-foreground: #F9FAFB;
+
+  --primary: #60A5FA;
+  /* Lighter blue for dark mode */
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #3F3F46;
+  --secondary-foreground: #F9FAFB;
+
+  --muted: #3F3F46;
+  --muted-foreground: #A1A1AA;
+  /* Lighter grey for secondary text */
+
+  --accent: #3F3F46;
+  --accent-foreground: #F9FAFB;
+
+  --destructive: #F87171;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #3F3F46;
+  --input: #3F3F46;
+  --ring: #60A5FA;
+
+  --chart-1: #60A5FA;
+  --chart-2: #3B82F6;
+  --chart-3: #2563EB;
+  --chart-4: #1D4ED8;
+  --chart-5: #1E40AF;
+
+  --sidebar: #18181b;
+  --sidebar-foreground: #F9FAFB;
+  --sidebar-primary: #60A5FA;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #3F3F46;
+  --sidebar-accent-foreground: #F9FAFB;
+  --sidebar-border: #3F3F46;
+  --sidebar-ring: #60A5FA;
+
+  /* Sonner Toast Colors - Dark Mode */
+  --success-bg: hsl(142, 76%, 16%);
+  --success-text: hsl(142, 70%, 90%);
+  --success-border: hsl(142, 60%, 30%);
+
+  --error-bg: hsl(0, 72%, 20%);
+  --error-text: hsl(0, 70%, 90%);
+  --error-border: hsl(0, 65%, 35%);
+
+  --warning-bg: hsl(38, 92%, 20%);
+  --warning-text: hsl(38, 90%, 90%);
+  --warning-border: hsl(38, 80%, 35%);
+
+  --info-bg: hsl(217, 91%, 20%);
+  --info-text: hsl(217, 90%, 90%);
+  --info-border: hsl(217, 80%, 35%);
+}
+
+
+@theme inline {
+  /* Design System - Color Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar Colors */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html,
+  body {
+    @apply bg-background text-foreground;
+  }
+}
